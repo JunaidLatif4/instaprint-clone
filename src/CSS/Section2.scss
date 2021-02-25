@@ -1,0 +1,50 @@
+.s2_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 1500px){
+        height: 55vh;
+        margin-bottom: 20px;
+    }
+    @media only screen and (max-width: 1400px){
+        height: 60vh;
+    }
+}
+.s2_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s2_card_box{
+    display: grid;
+    grid-template-columns: repeat(2 , 420px);
+    grid-template-rows: 500px;
+    grid-column-gap: 50px;
+    
+    @media only screen and (max-width: 1500px){
+        grid-template-columns: repeat(2 , 320px);
+        grid-template-rows: 400px;
+        grid-column-gap: 40px;
+
+    }
+    @media only screen and (max-width: 1400px){
+        grid-template-columns: repeat(2 , 280px);
+        grid-template-rows: 350px;
+        grid-column-gap: 30px;
+
+    }
+}
+.s2_card{
+    transition: all 1s;
+}
+.s2_card:hover{
+    transform: translateY(30px);
+}
+.s2_card img{
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+.login_container{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .login_c{
+        padding: 2rem;
+        border: 2px solid #999;
+    }
+}
+
+.login_box{
+    display: grid;
+    justify-content: center;
+    position: relative;
+}
+.login_form{
+    position: relative;
+    width: 28.125rem;
+    height: auto;
+    padding: 1rem 2rem;
+}
+.signup_btn_container{
+    margin-left: 7%;
+}

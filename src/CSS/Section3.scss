@@ -1,0 +1,132 @@
+.s3_container{
+    background-color: #f4f4f4;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 1500px){
+        height: 40vh;
+
+    }
+    @media only screen and (max-width: 1400px){
+        height: 37vh;
+
+    }
+}
+.s3_box{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1500px){
+        width: 70%;
+    }
+    @media only screen and (max-width: 1400px){
+        width: 65%;
+    }
+
+}
+.s3_heading{
+    display: grid;
+    grid-template-columns: auto 300px auto;
+    
+    @media only screen and (max-width: 1500px){
+        grid-template-columns: auto 200px auto;
+    }
+    @media only screen and (max-width: 1400px){
+        grid-template-columns: auto 180px auto;
+    }
+    
+}
+.s3_heading_content{
+    
+    text-align: center;
+    font-size: 40px;
+
+    @media only screen and (max-width: 1500px){
+
+    font-size: 35px;
+    }
+    @media only screen and (max-width: 1400px){
+
+    font-size: 30px;
+    }
+}
+
+%line{
+    border: 2px solid black;    
+    background-color: black;
+    margin-top: 4%;
+    
+    @media only screen and (max-width: 1500px){
+        border: 1.5px solid black;    
+
+    }
+    @media only screen and (max-width: 1400px){
+        border: 1px solid black;    
+
+    }
+}
+.s3_left_line hr{
+    @extend %line;
+}
+.s3_right_line hr{
+    @extend %line;
+}
+.s3_down_line{
+    @extend %line;
+    margin-top: 1%;
+    hr{
+        border-width: 0;
+    }
+}
+.client_slider_container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+.client_slider{
+    position: relative;
+    min-width: 100%;
+    transition: .5s;
+    img{
+        width: 100%;
+    }
+}
+
+%btn-style{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+    height: 60vh;
+    background: none;
+    border: none;
+    outline: none;
+    transition: .5s;
+    background-color: rgba(255, 255, 255, 0.1);
+
+
+    &:hover{
+
+        background-color: rgba(0, 0, 0, 0.170);
+        cursor: pointer;
+        .navbtn{
+            color: whitesmoke;
+        }
+
+    }
+}
+
+#prevbtn{
+    left: 0;
+    @extend %btn-style;
+    
+}
+#nextbtn{
+    right: 0;
+    @extend %btn-style;
+
+}
