@@ -12,6 +12,9 @@
     @media only screen and (max-width: 1400px){
         height: 60vh;
     }
+    @media only screen and (max-width: 1200px){
+        height: 55vh;
+    }
 }
 .s2_box{
     display: flex;
@@ -29,13 +32,16 @@
         grid-template-columns: repeat(2 , 320px);
         grid-template-rows: 400px;
         grid-column-gap: 40px;
-
     }
     @media only screen and (max-width: 1400px){
         grid-template-columns: repeat(2 , 280px);
         grid-template-rows: 350px;
         grid-column-gap: 30px;
-
+    }
+    @media only screen and (max-width: 1200px){
+        grid-template-columns: repeat(2 , 250px);
+        grid-template-rows: 300px;
+        grid-column-gap: 30px;
     }
 }
 .s2_card{

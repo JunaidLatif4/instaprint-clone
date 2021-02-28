@@ -21,6 +21,9 @@
     @media only screen and (max-width: 1300px) {
         width: 75%;
     }
+    @media only screen and (max-width: 1200px) {
+        width: 90%;
+    }
 }
 .footer_about{
 
@@ -39,6 +42,7 @@
     @media only screen and (max-width: 1500px) {
         width: 22%;
     }
+
 }
 
 .branch_box{
@@ -54,6 +58,9 @@
     @media only screen and (max-width: 1500px) {
         border-right: 2px solid #cfcfcf;
     }
+    @media only screen and (max-width: 1200px) {
+        border-right: 1px solid #cfcfcf;
+    }
 
     li{
         display: list-item;
@@ -64,8 +71,13 @@
         @media only screen and (max-width: 1500px) {
             padding-right: 8px;
             padding-left: 8px;
-
         }
+        @media only screen and (max-width: 1200px) {
+            padding-right: 7px;
+            padding-left: 7px;
+        }
+
+
         b{
             float: left;
             min-width: 90px;
@@ -73,11 +85,17 @@
             width: min-content;
             line-height: 20px;
 
-        @media only screen and (max-width: 1500px) {
-            min-width: 80px;
-            font-size: 14px;
+            @media only screen and (max-width: 1500px) {
+                min-width: 80px;
+                font-size: 14px;
+            }
+            @media only screen and (max-width: 1200px) {
+                min-width: 70px;
+                font-size: 13px;
+            }
         }
-        }
+
+
         p{
             overflow: auto;
             
@@ -85,6 +103,8 @@
                 font-size: 13px;
             }
         }
+
+
         a{
             outline: none;
             text-decoration: none;
@@ -93,8 +113,12 @@
             @media only screen and (max-width: 1500px) {
                 font-size: 13px;
             }
-            
+            @media only screen and (max-width: 1200px) {
+                font-size: 12px;
+            }
         }
+
+
         input{
             background-color: #231f20;
             border: 2px solid #cfcfcf;
@@ -156,13 +180,15 @@ h3{
 
 .copyright_box{
     width: 100%;
-    // padding-top:  50px;
     hr{
         margin-bottom: 10px;
     }
     a{
         color: red;
         text-decoration: none;
+    }
+    p{
+        padding-left: 3%;
     }
 }
 
@@ -171,7 +197,7 @@ h3{
     justify-content: center;
     text-align: center;
     float: right;
-    margin-right: 30px;
+    margin-right: 3%;
     .icons{
         *{
             margin-right: 5px;

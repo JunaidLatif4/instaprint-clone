@@ -1,0 +1,56 @@
+.btn_container{
+    line-height: 0;
+    cursor: pointer;
+    // position: absolute;
+    left: 0;
+    outline: none;
+
+    @media only screen and (min-width: 1001px) {
+        display: none;
+    }
+}
+
+.menu_container{
+    width: 60%;
+    max-width: 400px;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 2px 2px 5px black;
+    box-sizing: border-box;
+    transform: translatex(0);
+    transition: transform 10s ease-in-out;
+
+
+    ul{
+        margin: 3rem 1rem;
+        list-style: none;
+        li {
+            margin: .5rem;
+           a{
+               font-size: large;
+               color: black;
+               font-weight: bold;
+               text-decoration:none;
+
+               &:hover{
+                color: red;
+               }
+           } 
+        }
+    }
+}
+.menuClose_container{
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.157);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+}

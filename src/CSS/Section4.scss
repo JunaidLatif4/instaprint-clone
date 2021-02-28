@@ -19,6 +19,9 @@
     @media only screen and (max-width: 1500px){
         width: 50%;
     }
+    @media only screen and (max-width: 1500px){
+        width: 50%;
+    }
 }
 .s4_box_heading{
     text-align: center;
@@ -29,6 +32,9 @@
     }
     @media only screen and (max-width: 1400px){
         font-size: 30px;
+    }
+    @media only screen and (max-width: 1400px){
+        font-size: 25px;
     }
 }
 
@@ -45,6 +51,10 @@
     }
     @media only screen and (max-width: 1400px){
         grid-template-columns: repeat(4 , 150px);
+        grid-gap: 18px;
+    }
+    @media only screen and (max-width: 1200px){
+        grid-template-columns: repeat(4 , 130px);
         grid-gap: 18px;
     }
 }

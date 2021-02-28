@@ -7,11 +7,12 @@
 
     @media only screen and (max-width: 1500px){
         height: 40vh;
-
     }
     @media only screen and (max-width: 1400px){
         height: 37vh;
-
+    }
+    @media only screen and (max-width: 1200px){
+        height: 35vh;
     }
 }
 .s3_box{
@@ -25,6 +26,9 @@
     @media only screen and (max-width: 1400px){
         width: 65%;
     }
+    @media only screen and (max-width: 1200px){
+        width: 60%;
+    }
 
 }
 .s3_heading{
@@ -37,6 +41,9 @@
     @media only screen and (max-width: 1400px){
         grid-template-columns: auto 180px auto;
     }
+    @media only screen and (max-width: 1200px){
+        grid-template-columns: auto 150px auto;
+    }
     
 }
 .s3_heading_content{
@@ -45,12 +52,13 @@
     font-size: 40px;
 
     @media only screen and (max-width: 1500px){
-
-    font-size: 35px;
+        font-size: 35px;
     }
     @media only screen and (max-width: 1400px){
-
-    font-size: 30px;
+        font-size: 30px;
+    }
+    @media only screen and (max-width: 1200px){
+        font-size: 25px;
     }
 }
 
@@ -61,11 +69,9 @@
     
     @media only screen and (max-width: 1500px){
         border: 1.5px solid black;    
-
     }
     @media only screen and (max-width: 1400px){
         border: 1px solid black;    
-
     }
 }
 .s3_left_line hr{

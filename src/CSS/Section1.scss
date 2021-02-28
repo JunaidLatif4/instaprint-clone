@@ -9,7 +9,7 @@
         height: 85vh;
     }
     @media only screen and (max-width: 1400px){
-        height: 95vh;
+        height: 90vh;
     }
 }
 .s1_box{
@@ -31,6 +31,10 @@
         padding-top: 25px;
         font-size: 25px;
     }
+    @media only screen and (max-width: 1200px){
+        padding-top: 20px;
+        font-size: 22px;
+    }
 }
 .s1_card_box{
     margin-top: 40px;
@@ -47,9 +51,6 @@
         grid-column-gap: 30px;
         grid-row-gap: 20px;
         font-size: 15px;
-
-
-
     }
     @media only screen and (max-width: 1400px){
         margin-top: 8px;
@@ -57,8 +58,13 @@
         grid-column-gap: 25px;
         grid-row-gap: 15px;
         font-size: 13px;
-
-
+    }
+    @media only screen and (max-width: 1200px){
+        margin-top: 8px;
+        grid-template-columns:repeat(4 , 160px);
+        grid-column-gap: 22px;
+        grid-row-gap: 10px;
+        font-size: 12px;
     }
 
 }

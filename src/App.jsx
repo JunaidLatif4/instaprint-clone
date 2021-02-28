@@ -1,6 +1,6 @@
 // Import Requried Components :
 import React from 'react';
-import {Route , Switch} from 'react-router-dom';
+import {Route , Switch , Redirect} from 'react-router-dom';
 
 // Import Components :
 import Header from "./Components/Header";
@@ -24,6 +24,7 @@ const App = ()=>{
                 <Route path="/contact" component={Contact} />
                 <Route path="/login" component={Login} />
                 <Route path="/bu" component={AllCards} />
+                <Redirect to="/" />
             </Switch>
 
             <Footer/>
