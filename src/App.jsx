@@ -9,7 +9,7 @@ import Footer from './Components/Footer';
 import Register from './Components/Register';
 import Contact from './Components/Contact';
 import Login from './Components/Login';
-import AllCards from './Components/AllCards.jsx';
+import AllCards from './Components/Cards_Components/AllCards.jsx';
 
 
 const App = ()=>{

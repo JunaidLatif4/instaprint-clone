@@ -1,0 +1,33 @@
+.list_box{
+    border-bottom: 1px solid #d3d3d3;
+    margin: .5rem 0;
+
+    .nav_list{
+        text-decoration: none;
+        color: black;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        padding: .2rem .5rem;
+        font-size: 17px;
+        
+        .arrow{
+            text-align: end;
+        }
+        
+    }
+
+
+}
+
+.subMenu_box{
+    margin: .5rem 1rem;
+
+    .subMenu{
+        color: #707070;
+        text-decoration: none;
+        display: block;
+        font-size: 15px;
+        margin: 5px;
+    }
+}

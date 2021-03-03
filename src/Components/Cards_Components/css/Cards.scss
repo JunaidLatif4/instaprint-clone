@@ -1,0 +1,35 @@
+.cards_box{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    .img_box{
+        height: 75%;
+        width: 100%;
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .data{
+        background: #d4d4d4;
+        border-radius: 0 0 5px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+
+        .price{
+            font-weight: bold;
+            font-size: large;
+        }
+        .dis{
+            font-size: small;
+        }
+    }
+}
