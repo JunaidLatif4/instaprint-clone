@@ -15,6 +15,9 @@
     @media only screen and (max-width: 1400px){
         height: 50vh;
     }
+    @media only screen and (max-width: 600px){
+        height: 30vh;
+    }
 }
 .slider{
     position: relative;
@@ -29,7 +32,6 @@
     top: 50%;
     transform: translateY(-50%);
     width: 5%;
-    height: 60vh;
     background: none;
     border: none;
     outline: none;
@@ -58,5 +60,6 @@
 
 #img{
     width: 100%;
-    height: auto;
+    height: -webkit-fill-available;
+
 }

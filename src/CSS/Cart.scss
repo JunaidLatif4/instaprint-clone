@@ -1,0 +1,33 @@
+.cart_container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    z-index: 500;
+
+    .cart_box{
+        padding: 2rem 1rem;
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+    }
+}
+
+
+.hidecart_container{
+    background-color: rgba(0, 0, 0, 0.350);
+    height: 100%;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 300;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

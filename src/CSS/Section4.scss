@@ -8,6 +8,9 @@
     @media only screen and (max-width: 1500px){
         height: 65vh;
     }
+    @media only screen and (max-width: 600px){
+        height: auto;
+    }
 }
 .s4_box{
 
@@ -55,6 +58,10 @@
     }
     @media only screen and (max-width: 1200px){
         grid-template-columns: repeat(4 , 130px);
+        grid-gap: 18px;
+    }
+    @media only screen and (max-width: 600px){
+        grid-template-columns: repeat(2 , 220px);
         grid-gap: 18px;
     }
 }

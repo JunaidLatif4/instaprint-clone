@@ -15,6 +15,9 @@
     @media only screen and (max-width: 1200px){
         height: 55vh;
     }
+    @media only screen and (max-width: 600px){
+        height: auto;
+    }
 }
 .s2_box{
     display: flex;
@@ -42,6 +45,12 @@
         grid-template-columns: repeat(2 , 250px);
         grid-template-rows: 300px;
         grid-column-gap: 30px;
+    }
+    @media only screen and (max-width: 600px){
+        grid-template-columns: repeat(2 , 220px);
+        grid-template-rows: 250px;
+        grid-column-gap: 30px;
+        margin: 2rem 0;
     }
 }
 .s2_card{

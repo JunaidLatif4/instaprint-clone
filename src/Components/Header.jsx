@@ -9,8 +9,11 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import Logo from '../img/logo.png';
 
+import {Cart , HideCart} from './Cart'
+
 import "../CSS/Header.scss"
 import "../CSS/SideMenu.scss"
+
 
 const Btn = (props) => {
 
@@ -54,6 +57,7 @@ const MenuClose = (props) => {
 
 
 const Header = () => {
+
     const [show, updateShow] = useState({
         mShow: false
     })
@@ -69,6 +73,26 @@ const Header = () => {
         updateShow((preValue) => {
             return {
                 mShow: !preValue.mShow
+            }
+        })
+    }
+
+
+    const [showCart, updateShowCart] = useState({
+        cShow: false
+    })
+
+    const togelShowCart = () => {
+        updateShowCart((preValue) => {
+            return {
+                cShow: !preValue.cShow
+            }
+        })
+    }
+    const togelHideCart = () => {
+        updateShowCart((preValue) => {
+            return {
+                cShow: !preValue.cShow
             }
         })
     }
@@ -98,7 +122,10 @@ const Header = () => {
 
                         <NavLink to="/contact" className="help"> <span><ContactSupportIcon className="icon" /></span> <span className="mes">Help &nbsp; is here</span>   </NavLink>
                         <NavLink to="/register" className="login"> <span><PersonPinIcon className="icon" /></span> <span className="mes">Sign in</span>   </NavLink>
-                        <a href="/" className="cart"> <span><ShoppingCartIcon className="icon" /></span> <span className="mes">Cart</span>   </a>
+                        <p onClick={togelShowCart} className="cart"> <span><ShoppingCartIcon className="icon" /></span> <span className="mes">Cart</span>   </p>
+                        <div className="animation">
+                        {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart}/> </>) : null}
+                        </div>
                     </div>
                 </div>
                 <div className="nav_container">

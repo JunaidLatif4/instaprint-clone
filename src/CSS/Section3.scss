@@ -29,6 +29,9 @@
     @media only screen and (max-width: 1200px){
         width: 60%;
     }
+    @media only screen and (max-width: 600px){
+        width: 80%;
+    }
 
 }
 .s3_heading{
@@ -43,6 +46,9 @@
     }
     @media only screen and (max-width: 1200px){
         grid-template-columns: auto 150px auto;
+    }
+    @media only screen and (max-width: 600px){
+        grid-template-columns: auto 100px auto;
     }
     
 }
@@ -59,6 +65,9 @@
     }
     @media only screen and (max-width: 1200px){
         font-size: 25px;
+    }
+    @media only screen and (max-width: 600px){
+        font-size: 20px;
     }
 }
 

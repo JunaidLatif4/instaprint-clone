@@ -29,6 +29,9 @@
     @media only screen and (max-width: 1200px) {
         font-size: 12px;
     }
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
 }
 .call{
     margin-right: 40%;
@@ -61,6 +64,9 @@
     }
     @media only screen and (max-width: 1200px) {
         width: 900px;
+    }
+    @media only screen and (max-width: 600px) {
+        display: none;
     }
 }
 .img{
@@ -190,6 +196,7 @@
     margin-left: 10px;
     text-decoration: none;
     color: #4d4d4d;
+    cursor: pointer;
 
 }
 .cart .icon{
@@ -294,4 +301,3 @@
         }
     }
 }
-
