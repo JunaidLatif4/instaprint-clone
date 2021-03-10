@@ -6,10 +6,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import SearchIcon from '@material-ui/icons/Search';
 
 import Logo from '../img/logo.png';
 
-import {Cart , HideCart} from './Cart'
+import { Cart, HideCart } from './Cart'
 
 import "../CSS/Header.scss"
 import "../CSS/SideMenu.scss"
@@ -124,13 +125,35 @@ const Header = () => {
                         <NavLink to="/register" className="login"> <span><PersonPinIcon className="icon" /></span> <span className="mes">Sign in</span>   </NavLink>
                         <p onClick={togelShowCart} className="cart"> <span><ShoppingCartIcon className="icon" /></span> <span className="mes">Cart</span>   </p>
                         <div className="animation">
-                        {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart}/> </>) : null}
+                            {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart} /> </>) : null}
                         </div>
                     </div>
                 </div>
                 <div className="nav_container">
                     <Btn click={togelShow} />
                     {show.mShow ? (<> <Menu /><MenuClose click={togelHide} /> </>) : null}
+
+                    <div className="mbl_nav">
+                        <div className="mbl_nav_box">
+                            <div className="mbl_nav_img">
+                                <NavLink to="/">
+                                    <img src={Logo} alt="Error" />
+                                </NavLink>
+                            </div>
+                            <div className="mbl_nav_data">
+                                <div className="mbl_nav_search">
+                                    <span><SearchIcon style={{ fontSize: "2rem" }} /></span>
+                                </div>
+                                <div className="mbl_nav_register">
+                                    <NavLink to="/register"><PersonPinIcon style={{ fontSize: "2rem" }} /></NavLink>
+                                </div>
+                                <div className="mbl_nav_cart">
+                                    <span onClick={togelShowCart} ><ShoppingCartIcon style={{ fontSize: "2rem" }} /></span>
+                                </div>
+                                {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart} /> </>) : null}
+                            </div>
+                        </div>
+                    </div>
                     <nav>
                         <ul>
                             <li><NavLink to="/bu"> All &nbsp; |</NavLink></li>

@@ -52,6 +52,18 @@
         grid-column-gap: 30px;
         margin: 2rem 0;
     }
+    @media only screen and (max-width: 500px){
+        grid-template-columns: repeat(2 , 170px);
+        grid-template-rows: 200px;
+        grid-column-gap: 30px;
+        margin: 2rem 0;
+    }
+    @media only screen and (max-width: 400px){
+        grid-template-columns: repeat(2 , 150px);
+        grid-template-rows: 180px;
+        grid-column-gap: 30px;
+        margin: 2rem 0;
+    }
 }
 .s2_card{
     transition: all 1s;

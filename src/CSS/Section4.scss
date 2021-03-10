@@ -64,6 +64,14 @@
         grid-template-columns: repeat(2 , 220px);
         grid-gap: 18px;
     }
+    @media only screen and (max-width: 600px){
+        grid-template-columns: repeat(2 , 180px);
+        grid-gap: 18px;
+    }
+    @media only screen and (max-width: 400px){
+        grid-template-columns: repeat(2 , 150px);
+        grid-gap: 18px;
+    }
 }
 .s4_card{
 
