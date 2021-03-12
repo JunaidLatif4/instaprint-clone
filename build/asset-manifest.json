@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/instaprint-clone/static/css/main.853f6854.chunk.css",
-    "main.js": "/instaprint-clone/static/js/main.6434641b.chunk.js",
-    "main.js.map": "/instaprint-clone/static/js/main.6434641b.chunk.js.map",
-    "runtime-main.js": "/instaprint-clone/static/js/runtime-main.118ade63.js",
-    "runtime-main.js.map": "/instaprint-clone/static/js/runtime-main.118ade63.js.map",
+    "main.css": "/instaprint-clone/static/css/main.071dfa56.chunk.css",
+    "main.js": "/instaprint-clone/static/js/main.63711641.chunk.js",
+    "main.js.map": "/instaprint-clone/static/js/main.63711641.chunk.js.map",
+    "runtime-main.js": "/instaprint-clone/static/js/runtime-main.04417283.js",
+    "runtime-main.js.map": "/instaprint-clone/static/js/runtime-main.04417283.js.map",
     "static/css/2.3d0c4c86.chunk.css": "/instaprint-clone/static/css/2.3d0c4c86.chunk.css",
-    "static/js/2.96476399.chunk.js": "/instaprint-clone/static/js/2.96476399.chunk.js",
-    "static/js/2.96476399.chunk.js.map": "/instaprint-clone/static/js/2.96476399.chunk.js.map",
-    "static/js/3.f29c5534.chunk.js": "/instaprint-clone/static/js/3.f29c5534.chunk.js",
-    "static/js/3.f29c5534.chunk.js.map": "/instaprint-clone/static/js/3.f29c5534.chunk.js.map",
+    "static/js/2.e26be573.chunk.js": "/instaprint-clone/static/js/2.e26be573.chunk.js",
+    "static/js/2.e26be573.chunk.js.map": "/instaprint-clone/static/js/2.e26be573.chunk.js.map",
+    "static/js/3.97212e68.chunk.js": "/instaprint-clone/static/js/3.97212e68.chunk.js",
+    "static/js/3.97212e68.chunk.js.map": "/instaprint-clone/static/js/3.97212e68.chunk.js.map",
     "index.html": "/instaprint-clone/index.html",
     "static/css/2.3d0c4c86.chunk.css.map": "/instaprint-clone/static/css/2.3d0c4c86.chunk.css.map",
-    "static/css/main.853f6854.chunk.css.map": "/instaprint-clone/static/css/main.853f6854.chunk.css.map",
-    "static/js/2.96476399.chunk.js.LICENSE.txt": "/instaprint-clone/static/js/2.96476399.chunk.js.LICENSE.txt",
+    "static/css/main.071dfa56.chunk.css.map": "/instaprint-clone/static/css/main.071dfa56.chunk.css.map",
+    "static/js/2.e26be573.chunk.js.LICENSE.txt": "/instaprint-clone/static/js/2.e26be573.chunk.js.LICENSE.txt",
     "static/media/1bus.88c556a5.jpg": "/instaprint-clone/static/media/1bus.88c556a5.jpg",
     "static/media/1c.b6f0c1a2.png": "/instaprint-clone/static/media/1c.b6f0c1a2.png",
     "static/media/1insta.242381aa.jpg": "/instaprint-clone/static/media/1insta.242381aa.jpg",
@@ -49,10 +49,10 @@
     "static/media/slider4.f27c227b.jpg": "/instaprint-clone/static/media/slider4.f27c227b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.118ade63.js",
+    "static/js/runtime-main.04417283.js",
     "static/css/2.3d0c4c86.chunk.css",
-    "static/js/2.96476399.chunk.js",
-    "static/css/main.853f6854.chunk.css",
-    "static/js/main.6434641b.chunk.js"
+    "static/js/2.e26be573.chunk.js",
+    "static/css/main.071dfa56.chunk.css",
+    "static/js/main.63711641.chunk.js"
   ]
 }

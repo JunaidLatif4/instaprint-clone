@@ -6,6 +6,9 @@
     color: rgb(252, 252, 252);
 
 
+    @media only screen and (min-width: 601px) {
+        display: none;
+    }
     
 
 }

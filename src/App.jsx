@@ -23,7 +23,7 @@ const App = ()=>{
                 <Route path="/register" component={Register}/>
                 <Route path="/contact" component={Contact} />
                 <Route path="/login" component={Login} />
-                <Route path="/bu" component={AllCards} />
+                <Route path="/card" component={AllCards} />
                 <Redirect to="/" />
             </Switch>
 

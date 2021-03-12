@@ -32,15 +32,15 @@ const Menu = () => {
         <>
             <div className="menu_container">
                 <ul>
-                    <li><NavLink to="/bu"> All </NavLink></li>
-                    <li><NavLink to="/"> Business Cards</NavLink></li>
-                    <li><NavLink to="/"> Clothing, Bags & Boxes</NavLink></li>
-                    <li><NavLink to="/"> Markiting Material</NavLink></li>
-                    <li><NavLink to="/"> Office Stationary</NavLink></li>
-                    <li><NavLink to="/"> Promotional Items</NavLink></li>
-                    <li><NavLink to="/"> Weddings</NavLink></li>
-                    <li><NavLink to="/"> Bundles</NavLink></li>
-                    <li><NavLink to="/"> Design Services</NavLink></li>
+                    <li><NavLink to="/card/bu"> All </NavLink></li>
+                    <li><NavLink to="/card/business_card"> Business Cards</NavLink></li>
+                    <li><NavLink to="/card/clothing_bags"> Clothing, Bags & Boxes</NavLink></li>
+                    <li><NavLink to="/card/markiting_material"> Markiting Material</NavLink></li>
+                    <li><NavLink to="/card/office_stationary"> Office Stationary</NavLink></li>
+                    <li><NavLink to="/card/promotional_items"> Promotional Items</NavLink></li>
+                    <li><NavLink to="/card/weddings"> Weddings</NavLink></li>
+                    <li><NavLink to="/card/bundles"> Bundles</NavLink></li>
+                    <li><NavLink to="/card/design_services"> Design Services</NavLink></li>
                 </ul>
             </div>
         </>
@@ -156,15 +156,15 @@ const Header = () => {
                     </div>
                     <nav>
                         <ul>
-                            <li><NavLink to="/bu"> All &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Business Cards &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Clothing, Bags & Boxes  &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Markiting Material &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Office Stationary &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Promotional Items &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Weddings &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Bundles &nbsp; |</NavLink></li>
-                            <li><NavLink to="/"> Design Services</NavLink></li>
+                            <li><NavLink to="/card/bu"> All &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/business_card"> Business Cards &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/clothing_bags"> Clothing, Bags & Boxes  &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/markiting_material"> Markiting Material &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/office_stationary"> Office Stationary &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/promotional_items"> Promotional Items &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/weddings"> Weddings &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/bundles"> Bundles &nbsp; |</NavLink></li>
+                            <li><NavLink to="/card/design_services"> Design Services</NavLink></li>
                         </ul>
                     </nav>
                 </div>
