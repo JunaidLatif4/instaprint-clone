@@ -13,6 +13,8 @@ import "react-intl-tel-input/dist/main.css"
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import Register from './BackEnd_Connection/SignUp_API';
+
 // CSS :
 import "../CSS/SignUp.scss";
 
@@ -220,6 +222,35 @@ const SignUp = () => {
   }
 
 
+  const submit = (data) => {
+    data.preventDefault();
+    updateEnteredData({
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    })
+
+  }
+
+  async function userRegister()
+  {
+    console.log("HELLOW JHSFSKJHDKH")
+
+    let result = await fetch("http://localhost:8000/api/signup",{
+      method:"POST",
+      body:JSON.stringify(enteredData),
+      headers:{
+        "Content-Type":"application/json",
+        "Accept":"application/json"
+      }
+    })
+    result = await result.json()
+    console.log("The Result = " , result)
+  }
+
+
   return (
     <>
       <div className="signup_container">
@@ -228,11 +259,12 @@ const SignUp = () => {
             SIGN-UP
         </Typography>
 
-          <form className="form">
+          <form className="form" onSubmit={submit}>
             <TextField
               label="First Name"
               variant="outlined"
               name="firstname"
+              value={enteredData.firstname}
               onChange={enteringData}
               style={{ margin: ".5rem 0", width: "100%" }}
             />
@@ -241,6 +273,7 @@ const SignUp = () => {
               label="Last Name"
               variant="outlined"
               name="lastname"
+              value={enteredData.lastname}
               onChange={enteringData}
               style={{ width: "100%", margin: "0.5rem 0rem 1rem 0rem" }}
             />
@@ -254,6 +287,7 @@ const SignUp = () => {
               label="Email"
               variant="outlined"
               name="email"
+              value={enteredData.email}
               onChange={enteringData}
               style={{ width: "100%", margin: "1rem 0 0.5rem 0" }}
             />
@@ -263,6 +297,7 @@ const SignUp = () => {
               <InputLabel>Password</InputLabel>
               <OutlinedInput
                 name="password"
+                value={enteredData.password}
                 onChange={enteringData}
                 type={showPV.showP ? "text" : "password"}
                 labelWidth={70}
@@ -282,6 +317,7 @@ const SignUp = () => {
               <InputLabel>Confirm Password</InputLabel>
               <OutlinedInput
                 name="confirmPassword"
+                value={enteredData.confirmPassword}
                 onChange={enteringData}
                 type={showCPV.showCP ? "text" : "password"}
                 labelWidth={130}
@@ -298,7 +334,7 @@ const SignUp = () => {
             <Typography className={classes.error}> {enteredData.confirmPassword !== enteredData.password ? "Password did not Match" : ""} </Typography>
 
             {
-                enteredData.firstname &&
+              enteredData.firstname &&
                 enteredData.lastname &&
                 enteredData.email &&
                 enteredData.password &&
@@ -315,6 +351,7 @@ const SignUp = () => {
                     type="submit"
                     endIcon={<SharpIcon />}
                     className={classes.btn}
+                    onClick={userRegister}
                   >
                     SIGN UP
                   </Button>
@@ -334,7 +371,7 @@ const SignUp = () => {
       </div>
 
       <div>
-        {error.emailError} <br/>
+        {error.emailError} <br />
         {enteredData.email}
       </div>
     </>
