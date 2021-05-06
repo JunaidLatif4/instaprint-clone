@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axois from "axios";
 import { NavLink } from 'react-router-dom';
 import {
   Typography, Button, Grid, Checkbox, TextField, OutlinedInput,
@@ -12,6 +13,7 @@ import BlockIcon from '@material-ui/icons/BlockSharp';
 import { makeStyles } from '@material-ui/core/styles';
 
 import '../CSS/Login.scss';
+import { RegisterHeader } from "../env";
 
 const Style = makeStyles({
   btn: {
@@ -132,6 +134,34 @@ const Login = () => {
     })
   }
 
+  const submit = (data) => {
+    data.preventDefault();
+    updateEnteredData({
+      email: "",
+      password: ""
+    })
+
+  }
+
+
+  const userLogin = async ()=>{
+    axois({
+      url : "http://127.0.0.1:8000/api/login/",
+      method : "post",
+      headers : RegisterHeader ,
+      data : {
+        "username" : "tayyab",
+        "password" : "tayyab1234"
+      }
+    }).then((res)=>{
+      console.log("User LOGED IN ==============" , res.data['token'])
+      window.localStorage.setItem("token", res.data["token"])
+      window.location.href = "/"
+    }).catch((err)=>{
+      console.log("LOGIN ERROR ===========" , err)
+    })
+  }
+
   return (
     <>
       <div className="login_container">
@@ -142,10 +172,11 @@ const Login = () => {
               LOG-IN
             </Typography>
 
-            <form className="login_form">
+            <form className="login_form" onSubmit={submit}>
               <TextField
                 label="Emial"
                 name="email"
+                value={enteredData.email}
                 variant="outlined"
                 onChange={enteringData}
                 style={{ margin: ".5rem 0", width: "100%" }}
@@ -159,6 +190,7 @@ const Login = () => {
                   name="password"
                   type={showPV.showP ? "text" : "password"}
                   onChange={enteringData}
+                  value={enteredData.password}
                   labelWidth={70}
                   endAdornment={
                     <InputAdornment position="end">
@@ -182,6 +214,7 @@ const Login = () => {
                   <Button
                     variant="contained"
                     type="submit"
+                    onClick={userLogin}
                     endIcon={<SharpIcon />}
                     className={classes.btn}
                   >

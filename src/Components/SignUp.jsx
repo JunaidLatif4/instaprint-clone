@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axois from "axios";
 import {
   Typography, Button, Grid, Checkbox, TextField, OutlinedInput,
   FormControl, InputLabel, InputAdornment, IconButton
@@ -8,8 +9,7 @@ import Hide from '@material-ui/icons/VisibilityOff';
 import SharpIcon from '@material-ui/icons/SendSharp';
 import BlockIcon from '@material-ui/icons/BlockSharp';
 
-import IntlTelInput from 'react-intl-tel-input';
-import "react-intl-tel-input/dist/main.css"
+import Phone from "material-ui-phone-number";
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -17,6 +17,7 @@ import Register from './BackEnd_Connection/SignUp_API';
 
 // CSS :
 import "../CSS/SignUp.scss";
+import { RegisterHeader } from "../env";
 
 const Style = makeStyles({
   btn: {
@@ -128,7 +129,8 @@ const SignUp = () => {
             [name]: value
           }
         })
-        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(enteredData.email)) {
+        // if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(enteredData.email)) {
+        if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(enteredData.email)) {
           updateError((preValue) => {
             return {
               ...preValue,
@@ -233,22 +235,40 @@ const SignUp = () => {
     })
 
   }
-
-  async function userRegister()
-  {
-    console.log("HELLOW JHSFSKJHDKH")
-
-    let result = await fetch("http://localhost:8000/api/signup",{
-      method:"POST",
-      body:JSON.stringify(enteredData),
-      headers:{
-        "Content-Type":"application/json",
-        "Accept":"application/json"
+          // ------------------------USER REGISTER------------------------
+  const userRegister = async ()=>{
+    await axois({
+      method : "post",
+      url : "http://127.0.01:8000/api/register/",
+      headers : RegisterHeader ,
+      data : {
+        "username" : enteredData.firstname,
+        "password" : enteredData.password,
+        "first_name" : enteredData.firstname,
+        "last_name" : enteredData.lastname,
+        "email" : enteredData.email
       }
+    }).then((res)=>{
+      console.log("The Register DATA = " , res)
     })
-    result = await result.json()
-    console.log("The Result = " , result)
   }
+
+
+  // async function userRegister()
+  // {
+  //   console.log("HELLOW JHSFSKJHDKH")
+
+  //   let result = await fetch("http://localhost:8000/api/signup",{
+  //     method:"POST",
+  //     body:JSON.stringify(enteredData),
+  //     headers:{
+  //       "Content-Type":"application/json",
+  //       "Accept":"application/json"
+  //     }
+  //   })
+  //   result = await result.json()
+  //   console.log("The Result = " , result)
+  // }
 
 
   return (
@@ -259,7 +279,7 @@ const SignUp = () => {
             SIGN-UP
         </Typography>
 
-          <form className="form" onSubmit={submit}>
+          <form className="form" onSubmit={submit} autoComplete="off">
             <TextField
               label="First Name"
               variant="outlined"
@@ -279,8 +299,12 @@ const SignUp = () => {
             />
             <Typography style={{ paddingBottom: "0.5rem" }} className={classes.error}> {error.lastnameError} </Typography>
 
-            <IntlTelInput
-              preferredCountries={["pk"]}
+            <Phone
+              variant="outlined"
+              defaultCountry={'pk'}
+              onlyCountries = {['pk']}
+              style={{ width: "100%"}}
+              
             />
 
             <TextField

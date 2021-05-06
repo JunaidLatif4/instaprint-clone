@@ -4,16 +4,54 @@
     right: 0;
     height: 100%;
     width: 30vw;
-    display: flex;
-    justify-content: center;
     background-color: white;
     z-index: 500;
 
     .cart_box{
         padding: 2rem 1rem;
-        text-align: center;
         font-size: large;
         font-weight: bold;
+        
+        h2{
+            text-align: center;
+
+        }
+
+
+        .checkout{
+            width: 30vw;
+            padding: 1rem 1rem;
+            padding-right: 2rem;
+            position: fixed;
+            bottom: 0;
+
+            .total{
+                padding-top: 1rem;
+                font-size: large;
+                display: flex;
+
+                .amount{
+                    width: 100%;
+                    text-align: end;
+
+                }
+            }
+
+            .checkout_btn{
+                margin-top: 2rem;
+
+                .btn{
+                    background-color: rgb(237, 27, 36);
+                    border: 2px solid rgb(237, 27, 36);
+                    border-radius: 7px;
+                    width: 100%;
+                    color: white;
+                    font-size: 1.5rem;
+                    padding: .3rem;
+                }
+            }
+
+        }
     }
 }
 

@@ -1,9 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import './css/Cards.scss'
 
 const Cards = ({ data }) => {
     return (
+        <NavLink to={`/product/${data.id}`}>
         <div className="cards_box">
             <div className="img_box">
                 <img src={data.img} alt="Error" />
@@ -17,6 +19,7 @@ const Cards = ({ data }) => {
                 </div>
             </div>
         </div>
+        </NavLink>
     )
 }
 

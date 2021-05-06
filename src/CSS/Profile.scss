@@ -1,0 +1,89 @@
+.profile_container{
+    // border: 2px solid green;
+    height:50vh ;
+    width: 70%;
+    margin: 5rem auto;
+    
+    .profile_box{
+        // border: 2px solid rebeccapurple;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+
+        .profile_menu{
+            width: 90%;
+
+            .my_account{
+                font-size: large;
+                font-weight: bold;
+                padding: .5rem 1rem;
+                background-color: #f4f4f4;
+                border-bottom: 1px solid #d3d3d3;
+
+            }
+            .links{
+                display: block;
+                border-bottom: 1px solid #d3d3d3;
+                margin: .5rem 0;
+                text-decoration: none;
+                color: black;
+                align-items: center;
+                padding: .2rem .5rem;
+                font-size: 17px;
+            }
+        }
+
+
+
+        .profile_data{
+            
+            .account_info{
+                margin-bottom: 3rem;
+
+                .user_profile{
+                    padding: 1rem 1rem;
+                    text-transform: uppercase;
+                    font-size: large;
+                }
+
+                .btn{
+                    padding: .5rem;
+                    color: white;
+                    word-spacing: .5rem;
+                    letter-spacing: .2rem;
+                    background-color: rgb(237, 27, 36);
+                    border: 2px solid rgb(237, 27, 36);
+                    border-radius: 7px;
+                    font-size: 15px;
+                    cursor: pointer;
+
+                }
+            }
+
+
+
+            .address_info{
+
+                .user_address{
+                    padding: 1rem 1rem;
+                    text-transform: uppercase;
+                    line-height: 1.5rem;
+                }
+
+
+                .btn{
+                    padding: .5rem;
+                    color: white;
+                    word-spacing: .5rem;
+                    letter-spacing: .2rem;
+                    background-color: rgb(237, 27, 36);
+                    border: 2px solid rgb(237, 27, 36);
+                    border-radius: 7px;
+                    font-size: 15px;
+                    cursor: pointer;
+
+                }
+            }
+        }
+
+    }
+}

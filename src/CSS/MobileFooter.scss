@@ -82,15 +82,24 @@
 .branches_main{
     margin-top: 1.5%;
     width: 50vw;
+
+    li{
+        display: list-item;
+        list-style: none;
+        text-align: -webkit-match-parent;
+
+        b{
+            min-width: 90px;
+            width: min-content;
+            float: left;
+            
+        }
+
+        p{
+            overflow: auto;
+        }
+    }
     
-}
-.branches_para{
-    font-size: 90%;
-    margin-top: 1rem;
-}
-.title{
-    font-size: 70%;
-   float: right;
 }
 
 //====================================================

@@ -39,26 +39,26 @@ const Footer = () => {
                     <h3 className="payment_head">
                         BRANCHES
                     </h3>
-                    <div className="branches_main">
-                        <p className="branches_para">
-                            <span className="title">
+                    <ul className="branches_main">
+                        <li className="branches_para">
+                            <b> Gulberg</b>
+                            <p className="title">
                                 124 - P, M.M Alam Road Gulberg -11 Lahore
-                            </span>
-                            Gulberg
-                        </p>
-                        <p className="branches_para">
-                            <span className="title">
+                            </p>
+                        </li>
+                        <li className="branches_para">
+                            <b> Corporate</b>
+                            <p className="title">
                                 1st floor 124 - P, M.M Alam Road Gulberg -11 Lahore
-                            </span>
-                            Corporate
-                        </p>
-                        <p className="branches_para">
-                            <span className="title">
+                            </p>
+                        </li>
+                        <li className="branches_para">
+                            <b> Office:</b>
+                            <p className="title">
                                 2 - H, Commercial Area, DHA, Lahore
-                            </span>
-                              office:
-                        </p>
-                    </div>
+                            </p>
+                        </li>
+                    </ul>
 
 
 

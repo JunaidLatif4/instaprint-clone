@@ -1,4 +1,5 @@
-import React from 'react'
+import React , {useEffect, useState} from 'react'
+import axios from 'axios';
 
 import List from './List'
 import Cards from './Cards'
@@ -9,6 +10,23 @@ import { data } from './ListData';
 import  CardData  from './CardData';
 
 const AllCards = () => {
+    const [product , UpdateProduct] = useState(null)
+    useEffect(() => {
+        const getData = async ()=>{
+            axios({
+                method : "get",
+                url : "http://127.0.0.1:8000/api/shop/"
+
+            }).then((responce)=>{
+                console.log(responce.data)
+                UpdateProduct(responce.data.results)
+            })
+        }
+        getData()
+    }, [])
+
+    console.log("The Products = " , product)
+
     return (
         <div className="card_container">
             <div className="list_container">
@@ -26,13 +44,15 @@ const AllCards = () => {
 
             <div className="card_box">
                 {
-                    CardData.map((item , index)=>{
+                    (product != null) ? 
+                    product.map((item , index)=>{
                         return(
                             <>
                                 <Cards data={item} />
                             </>
                         )
                     })
+                    : null
                 }
             </div>
 

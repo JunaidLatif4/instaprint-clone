@@ -1,6 +1,6 @@
 .signup_container{
     padding: 2rem;
-    margin: 6rem auto;
+    margin: 0 auto;
     border: 2px solid #999;
 
     @media only screen and (max-width: 1400px) {
@@ -22,19 +22,5 @@
     @media only screen and (max-width: 1400px) {
         width: 25rem;
         padding: .5rem 1rem;
-    }
-}
-
-// COUNTRY SELECT INPUTS
-.intl-tel-input.allow-dropdown input,
-.intl-tel-input.allow-dropdown input[type=text],
-.intl-tel-input.allow-dropdown input[type=tel] {
-    height: 3.5rem;
-    width: 24rem;
-    border-radius: 5px;
-    border: 1px solid rgb(182, 181, 181);
-
-    @media only screen and (max-width: 1400px) {
-        width: 23rem;
     }
 }

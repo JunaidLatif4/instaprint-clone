@@ -71,6 +71,7 @@
         text-align: -webkit-match-parent;
         padding-right: 10px;
         padding-left: 10px;
+        margin-bottom: .7rem;
         
         @media only screen and (max-width: 1500px) {
             padding-right: 8px;
@@ -87,7 +88,7 @@
             min-width: 90px;
             font-weight: bold;
             width: min-content;
-            line-height: 20px;
+            line-height: 18px;
 
             @media only screen and (max-width: 1500px) {
                 min-width: 80px;

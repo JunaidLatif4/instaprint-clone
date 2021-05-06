@@ -2,6 +2,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+
+
 
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
@@ -11,6 +16,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Logo from '../img/logo.png';
 
 import { Cart, HideCart } from './Cart'
+import { useGlobalState } from '../state/provider';
 
 import "../CSS/Header.scss"
 import "../CSS/SideMenu.scss"
@@ -27,7 +33,7 @@ const Btn = (props) => {
     )
 }
 
-const Menu = () => {
+const MenuBar = () => {
     return (
         <>
             <div className="menu_container">
@@ -57,7 +63,42 @@ const MenuClose = (props) => {
 }
 
 
+const UserMenu = (props) => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+        // props.logout()
+    };
+    return (
+        <>
+            <div>
+                <Button aria-controls="simple-menu" aria-haspopup="true" className="login" onClick={handleClick}> <span><PersonPinIcon className="icon" /></span> <span className="mes" style={{ textTransform: "uppercase" , color:"rgb(237, 27, 36)" }}>{props.data}</span>   </Button>
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleClose}><NavLink to="/profile" style={{ textDecoration: "none", color: "black", font: "inherit" }}> Profile </NavLink></MenuItem>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose , props.logout}>Logout</MenuItem>
+                </Menu>
+            </div>
+        </>
+    )
+}
+
+
+
 const Header = () => {
+
+    const [{ profile }, dispatch] = useGlobalState();
 
     const [show, updateShow] = useState({
         mShow: false
@@ -98,6 +139,15 @@ const Header = () => {
         })
     }
 
+    const LogOut = () => {
+        window.localStorage.clear()
+        dispatch({
+            type: "ADD_PROFILE",
+            profile: null
+        })
+        window.location.href = "/"
+    }
+
     console.log(show)
 
     return (
@@ -122,7 +172,18 @@ const Header = () => {
                         <input type="text" name="search" id="search" className="search" />
 
                         <NavLink to="/contact" className="help"> <span><ContactSupportIcon className="icon" /></span> <span className="mes">Help &nbsp; is here</span>   </NavLink>
-                        <NavLink to="/register" className="login"> <span><PersonPinIcon className="icon" /></span> <span className="mes">Sign in</span>   </NavLink>
+
+                        {
+                            (profile !== null) ?
+                                <>
+                                    <UserMenu data={profile.profile_user.first_name} logout={LogOut} />
+                                </>
+                                :
+                                <>
+                                    <NavLink to="/register" className="login"> <span><PersonPinIcon className="icon" /></span> <span className="mes">Sign in</span>   </NavLink>
+                                </>
+                        }
+
                         <p onClick={togelShowCart} className="cart"> <span><ShoppingCartIcon className="icon" /></span> <span className="mes">Cart</span>   </p>
                         <div className="animation">
                             {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart} /> </>) : null}
@@ -131,7 +192,7 @@ const Header = () => {
                 </div>
                 <div className="nav_container">
                     <Btn click={togelShow} />
-                    {show.mShow ? (<> <Menu /><MenuClose click={togelHide} /> </>) : null}
+                    {show.mShow ? (<> <MenuBar /><MenuClose click={togelHide} /> </>) : null}
 
                     <div className="mbl_nav">
                         <div className="mbl_nav_box">
@@ -157,7 +218,8 @@ const Header = () => {
                     <nav>
                         <ul>
                             <li><NavLink to="/card/bu"> All &nbsp; |</NavLink></li>
-                            <li><NavLink to="/card/business_card"> Business Cards &nbsp; |</NavLink></li>
+                            {/* <li><NavLink to="/card/business_card"> Business Cards &nbsp; |</NavLink></li> */}
+                            <li><NavLink to="/profile"> Business Cards &nbsp; |</NavLink></li>
                             <li><NavLink to="/card/clothing_bags"> Clothing, Bags & Boxes  &nbsp; |</NavLink></li>
                             <li><NavLink to="/card/markiting_material"> Markiting Material &nbsp; |</NavLink></li>
                             <li><NavLink to="/card/office_stationary"> Office Stationary &nbsp; |</NavLink></li>
