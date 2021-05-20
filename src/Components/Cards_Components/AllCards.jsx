@@ -55,7 +55,6 @@ const AllCards = () => {
                     : null
                 }
             </div>
-
         </div>
     )
 }

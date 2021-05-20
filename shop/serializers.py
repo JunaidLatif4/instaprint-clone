@@ -46,3 +46,12 @@ class ProfileSerializer(serializers.ModelSerializer) :
         response = super().to_representation(instance)
         response['profile_user'] = UserSerializer(instance.profile_user).data
         return response
+
+
+
+
+
+# class AddressSerializer(serializers.ModelSerializer) :
+#     class Meta :
+#         model = Address
+#         fields = "__all__"

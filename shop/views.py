@@ -74,3 +74,37 @@ class RegisterView(APIView) :
             serializers.save()
             return Response({"Error" : False , "Message" : "The User is Created ." , "data" : register_user_data.data})
         return Response({"Error" : True , "Message" : "The User AlreadyExist"})
+
+
+class Updateprofile(APIView):
+    permission_classes = [IsAuthenticated, ]
+    authentication_classes = [TokenAuthentication, ]
+    def post(self,request):
+        try:
+            user = request.user
+            query = Profile.objects.get(profile_user = user)
+            data = request.data
+            serializers = ProfileSerializer(query , data=data , context={"request":request})
+            serializers.is_valid(raise_exception = True)
+            serializers.save()
+            res_msg={"Message":"Profile is Updated"}
+        except:
+            res_msg={"Message":"Somthing is Wrong Try Agane !"}
+        return Response(res_msg)
+
+
+
+# class AddressView(APIView):
+#     authentication_classes = [TokenAuthentication, ]
+#     permission_classes = [IsAuthenticated, ]
+
+#     def post(self , request) :
+#         user = request.user
+#         data = request.data
+#         serializer = AddressSerializer(data = data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response({"Error" : False , "Message" : "ADDRESS SAVED"})
+#         print(user)
+#         print("The Data = " , data)
+#         return Response({"Error" : True , "Message" : "Error"})

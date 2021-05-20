@@ -1,0 +1,22 @@
+.profile_menu{
+    width: 90%;
+
+    .my_account{
+        font-size: large;
+        font-weight: bold;
+        padding: .5rem 1rem;
+        background-color: #f4f4f4;
+        border-bottom: 1px solid #d3d3d3;
+
+    }
+    .links{
+        display: block;
+        border-bottom: 1px solid #d3d3d3;
+        margin: .5rem 0;
+        text-decoration: none;
+        color: black;
+        align-items: center;
+        padding: .2rem .5rem;
+        font-size: 17px;
+    }
+}

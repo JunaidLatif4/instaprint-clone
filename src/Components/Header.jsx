@@ -15,7 +15,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import Logo from '../img/logo.png';
 
-import { Cart, HideCart } from './Cart'
+import { CartPage, HideCart } from './CartPage'
 import { useGlobalState } from '../state/provider';
 
 import "../CSS/Header.scss"
@@ -186,7 +186,7 @@ const Header = () => {
 
                         <p onClick={togelShowCart} className="cart"> <span><ShoppingCartIcon className="icon" /></span> <span className="mes">Cart</span>   </p>
                         <div className="animation">
-                            {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart} /> </>) : null}
+                            {showCart.cShow ? (<> <CartPage /> <HideCart click={togelHideCart} /> </>) : null}
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@ const Header = () => {
                                 <div className="mbl_nav_cart">
                                     <span onClick={togelShowCart} ><ShoppingCartIcon style={{ fontSize: "2rem" }} /></span>
                                 </div>
-                                {showCart.cShow ? (<> <Cart /> <HideCart click={togelHideCart} /> </>) : null}
+                                {showCart.cShow ? (<> <CartPage /> <HideCart click={togelHideCart} /> </>) : null}
                             </div>
                         </div>
                     </div>

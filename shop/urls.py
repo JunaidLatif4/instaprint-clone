@@ -11,7 +11,8 @@ urlpatterns = [
     path('shop/' , ProductView.as_view() , name = "ProductView"),
     path('shop/<int:id>' , ProductView.as_view() , name = "ProductIDView"),
     path('profile/' , ProfileView.as_view() , name = "ProfileView" ),
-    path('register/' , RegisterView.as_view() , name = "RegisterView")
+    path('register/' , RegisterView.as_view() , name = "RegisterView"),
+    path('updateprofile/' , Updateprofile.as_view() , name = "Address")
     # path('login/' , ProfileView.as_view() , name = "ProfileView" ),
 
 

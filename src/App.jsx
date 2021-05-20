@@ -12,6 +12,8 @@ import Login from './Components/Login';
 import AllCards from './Components/Cards_Components/AllCards.jsx';
 import Product from './Components/Product';
 import Profile from './Components/Profile';
+import AddressBook from './Components/AddressBook'
+
 import axios from 'axios';
 import { useGlobalState } from './state/provider';
 
@@ -59,6 +61,7 @@ const App = () => {
                 <Route path="/card" component={AllCards} />
                 <Route path="/product/:pid" component={Product} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/address" component={AddressBook} />
                 <Redirect to="/" />
             </Switch>
 

@@ -2,6 +2,7 @@
 
 const initial = {
     profile : null,
+    address : null,
 }
 
 const reducer = (state , action) =>{
@@ -10,6 +11,12 @@ const reducer = (state , action) =>{
             return{
                 ...state,
                 profile : action.profile
+            }
+
+        case "ADDRESS" :
+            return{
+                ...state,
+                address : action.address
             }
 
         default :

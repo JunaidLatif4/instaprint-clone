@@ -150,8 +150,8 @@ const Login = () => {
       method : "post",
       headers : RegisterHeader ,
       data : {
-        "username" : "tayyab",
-        "password" : "tayyab1234"
+        "username" : enteredData.email ,
+        "password" : enteredData.password
       }
     }).then((res)=>{
       console.log("User LOGED IN ==============" , res.data['token'])

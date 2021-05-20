@@ -1,9 +1,28 @@
 import React, { useState } from 'react'
+import { useGlobalState } from '../state/provider';
+import { NavLink } from 'react-router-dom';
+
 import { Button, Typography } from "@material-ui/core"
+
 // CSS :
 import '../CSS/Profile.scss';
-import { NavLink } from 'react-router-dom';
-import { useGlobalState } from '../state/provider';
+import '../CSS/ProfileMenu.scss';
+
+const ProfileMenu = () => {
+    return (
+        <>
+            <div className="profile_menu">
+                <Typography className="my_account">MY ACCOUNT</Typography>
+                <NavLink to="#" className="links">Account Dashboard</NavLink>
+                <NavLink to="#" className="links">Account Information</NavLink>
+                <NavLink to="/address" className="links">Address Book</NavLink>
+                <NavLink to="#" className="links">My Orders</NavLink>
+                <NavLink to="#" className="links">MY ACCOUNT</NavLink>
+            </div>
+        </>
+    )
+}
+
 
 const Profile = () => {
 
@@ -13,20 +32,18 @@ const Profile = () => {
         FirstName: profile?.profile_user.first_name,
         LastName: profile?.profile_user.last_name,
         Email: profile?.profile_user.email,
+        address: profile?.addres,
+        city: profile?.city,
+        state: profile?.state,
+        phone: profile?.phone,
+        country: profile?.country,
     })
 
     return (
         <>
             <div className="profile_container">
                 <div className="profile_box">
-                    <div className="profile_menu">
-                        <Typography className="my_account">MY ACCOUNT</Typography>
-                        <NavLink to="#" className="links">Account Dashboard</NavLink>
-                        <NavLink to="#" className="links">Account Information</NavLink>
-                        <NavLink to="#" className="links">Address Book</NavLink>
-                        <NavLink to="#" className="links">My Orders</NavLink>
-                        <NavLink to="#" className="links">MY ACCOUNT</NavLink>
-                    </div>
+                    <ProfileMenu/>
                     <div className="profile_data">
                         <div className="account_info">
                             <h3>CONTACT INFORMATION</h3> <hr />
@@ -41,12 +58,12 @@ const Profile = () => {
                         <div className="address_info">
                             <h3>ADDRESS BOOK</h3> <hr />
                             <div className="user_address">
-                                <p style={{textTransform:"capitalize"}}>{userProfile.FirstName} {userProfile.LastName}</p>
-                                <p>kot murad khan kasur</p>
-                                <p>kasur , 55050</p>
-                                <p>punjab</p>
-                                <p>pakistan</p>
-                                <p><b>T :</b> 03174919000</p>
+                                <p style={{ textTransform: "capitalize" , fontWeight:"bold" , fontStyle:"italic" }}>{userProfile.FirstName} {userProfile.LastName}</p>
+                                <p>{userProfile.address}</p>
+                                <p>{userProfile.city}</p>
+                                <p>{userProfile.state}</p>
+                                <p>{userProfile.country}</p>
+                                <p><b>T :</b> {userProfile.phone}</p>
                             </div>
                             <NavLink to="/">
                                 <button className="btn"> CHANGE ADDRESS. </button>
@@ -60,3 +77,4 @@ const Profile = () => {
 }
 
 export default Profile
+export {ProfileMenu};

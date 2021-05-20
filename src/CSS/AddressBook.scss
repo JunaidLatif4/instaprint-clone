@@ -1,0 +1,20 @@
+.address_container{
+    margin: 5rem auto;
+    width: 70%;
+    
+
+    .address_box{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+
+
+
+        .address_data{
+
+            .form{
+                // width: 80%;
+                padding: 1rem;
+            }
+        }
+    }
+}
