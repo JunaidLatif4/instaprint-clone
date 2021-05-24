@@ -1,5 +1,5 @@
 // Import Requried Components
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,17 +10,57 @@ import Menu from '@material-ui/core/Menu';
 
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
+// BADGE :
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import Logo from '../img/logo.png';
 
+// GlobalStates :
 import { CartPage, HideCart } from './CartPage'
 import { useGlobalState } from '../state/provider';
+import { useSelector } from 'react-redux'
 
 import "../CSS/Header.scss"
 import "../CSS/SideMenu.scss"
 
+
+
+// BADGE STYLE / COMPONENT :
+const StyledBadge = withStyles((theme) => ({
+    badge: {
+        right: -3,
+        top: 25,
+        border: `2px solid ${theme.palette.background.paper}`,
+        padding: '0 4px',
+    },
+}))(Badge);
+
+const CartBadge = () => {
+    const cartItems = useSelector((state) => state.addToCart)
+    const [cartCount , updateCartCount] = useState(0)
+
+    useEffect(() => {
+        let count = 0;
+        cartItems.forEach( item => {
+            count += item.qty
+        });
+        updateCartCount(count)
+    }, [cartItems , cartCount])
+
+    console.log("AT THE CART BADGE ============ " , cartCount)
+    return (
+        <IconButton aria-label="cart">
+            <StyledBadge badgeContent={cartCount} color="secondary">
+                <ShoppingCartIcon style={{color : "#231f20" , fontSize : "35px"}} />
+            </StyledBadge>
+        </IconButton>
+    );
+}
+// ---------------------------------------------------------------------------------------------------------\\
 
 const Btn = (props) => {
 
@@ -77,7 +117,7 @@ const UserMenu = (props) => {
     return (
         <>
             <div>
-                <Button aria-controls="simple-menu" aria-haspopup="true" className="login" onClick={handleClick}> <span><PersonPinIcon className="icon" /></span> <span className="mes" style={{ textTransform: "uppercase" , color:"rgb(237, 27, 36)" }}>{props.data}</span>   </Button>
+                <Button aria-controls="simple-menu" aria-haspopup="true" className="login" onClick={handleClick}> <span><PersonPinIcon className="icon" /></span> <span className="mes" style={{ textTransform: "uppercase", color: "rgb(237, 27, 36)" }}>{props.data}</span>   </Button>
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEl}
@@ -87,7 +127,7 @@ const UserMenu = (props) => {
                 >
                     <MenuItem onClick={handleClose}><NavLink to="/profile" style={{ textDecoration: "none", color: "black", font: "inherit" }}> Profile </NavLink></MenuItem>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose , props.logout}>Logout</MenuItem>
+                    <MenuItem onClick={handleClose, props.logout}>Logout</MenuItem>
                 </Menu>
             </div>
         </>
@@ -184,7 +224,7 @@ const Header = () => {
                                 </>
                         }
 
-                        <p onClick={togelShowCart} className="cart"> <span><ShoppingCartIcon className="icon" /></span> <span className="mes">Cart</span>   </p>
+                        <p onClick={togelShowCart} className="cart"> <span><CartBadge className="icon" /></span> <span className="mes">Cart</span>   </p>
                         <div className="animation">
                             {showCart.cShow ? (<> <CartPage /> <HideCart click={togelHideCart} /> </>) : null}
                         </div>

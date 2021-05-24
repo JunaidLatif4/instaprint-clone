@@ -9,6 +9,14 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import {Button} from '@material-ui/core'
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+
+// Geting Cart From GlobalState :
+import { useSelector, useDispatch } from 'react-redux'
+import add from '../GlobalStates/actions/index';
+import {remove} from '../GlobalStates/actions/index';
 
 // CSS :
 import '../CSS/Cart.scss'
@@ -42,7 +50,17 @@ const useStyles = makeStyles({
 
 // Table Component :
 const MyTable = ({ data }) => {
+
     const classes = useStyles();
+
+    const dispatch = useDispatch();
+
+    const qtyBtn = {
+        backgroundColor : "#ed1b24",
+        border : "2px solid #ed1b24",
+        padding : "0",
+        color : "white"
+    }
 
     return (
         <TableContainer component={Paper}>
@@ -56,14 +74,14 @@ const MyTable = ({ data }) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {Object.entries(data).map((item, key) => (
-                        <StyledTableRow >
+                    {data.map((item, key) => (
+                        <StyledTableRow key={key}>
                             <StyledTableCell component="th" scope="row">
                                 {key + 1}
                             </StyledTableCell>
-                            <StyledTableCell align="right">{item[1][1]}</StyledTableCell>
-                            <StyledTableCell align="right">{item[1][2]}</StyledTableCell>
-                            <StyledTableCell align="right">{item[1][0]}</StyledTableCell>
+                            <StyledTableCell align="right">{item.title}</StyledTableCell>
+                            <StyledTableCell align="right">{item.price}</StyledTableCell>
+                            <StyledTableCell align="right"> <Button onClick={ ()=> dispatch(remove(item)) } style={qtyBtn}> <RemoveIcon/> </Button> {item.qty} <Button onClick={ ()=> dispatch(add(item)) } style={qtyBtn}> <AddIcon/> </Button> </StyledTableCell>
                         </StyledTableRow>
 
                     ))}
@@ -76,33 +94,41 @@ const MyTable = ({ data }) => {
 // Main CartPage Component :
 const CartPage = () => {
 
-    var productCart = JSON.parse(localStorage.getItem('cart'))
-    const [sum, updateSum] = useState(0)
+    var cartItems = useSelector((state) => state.addToCart)
 
-    var t = Object.entries(productCart).map((item , key)=>{
-        var p = Number(item[1][2])
-        var q = Number(item[1][0])
-        return(p * q)
-    })
-    var as = t.reduce((x,y)=> x+y , 0)
-    useEffect(() => {
-        updateSum(as)
-    }, [])
+    // var productCart = JSON.parse(localStorage.getItem('cart'))
+    // const [sum, updateSum] = useState(0)
+
+    // var t = Object.entries(productCart).map((item , key)=>{
+    //     var p = Number(item[1][2])
+    //     var q = Number(item[1][0])
+    //     return(p * q)
+    // })
+    // var as = t.reduce((x,y)=> x+y , 0)
+    // useEffect(() => {
+    //     updateSum(as)
+    // }, [])
 
     return (
         <div className="cart_container">
             <div className="cart_box">
                 <h2>SHOPING CART </h2> <hr />
 
-                <div className="cart_data">
-                    <MyTable data={productCart} />
-                </div>
+                {
+                    cartItems.length === 0 ? (<> <h1>YOUR CART IS EMPTY</h1> </>)
+                        : (
+                            <div className="cart_data">
+                                <MyTable data={cartItems} />
+                            </div>
+                        )
+                }
+                {cartItems[0]?.qty}
 
                 <div className="checkout">
                     <hr />
                     <div className="total">
                         <p>Subtotal</p>
-                        <p className="amount">{sum}</p>
+                        <p className="amount">******</p>
                     </div>
                     <div className="checkout_btn">
                         <button className="btn">CHECKOUT</button>
