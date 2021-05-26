@@ -1,8 +1,10 @@
 // Import Requried Components
 import React, { useState } from 'react'
+// Material UI Icons :
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
+// IMGS Imports :
 import c1 from '../img/1c.png';
 import c2 from '../img/2c.png';
 import c3 from '../img/3c.png';
@@ -10,8 +12,11 @@ import c4 from '../img/4c.png';
 import c5 from '../img/5c.png';
 import c6 from '../img/6c.png';
 
+//CSS :
 import '../CSS/Section3.scss'
 
+
+// Main SECTION3 Component :
 const Section3 = () => {
 
     let clients = [c1, c2, c3, c4, c5, c6]

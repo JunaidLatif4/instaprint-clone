@@ -51,7 +51,6 @@ const CartBadge = () => {
         updateCartCount(count)
     }, [cartItems , cartCount])
 
-    console.log("AT THE CART BADGE ============ " , cartCount)
     return (
         <IconButton aria-label="cart">
             <StyledBadge badgeContent={cartCount} color="secondary">
@@ -188,7 +187,6 @@ const Header = () => {
         window.location.href = "/"
     }
 
-    console.log(show)
 
     return (
         <>
