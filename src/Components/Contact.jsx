@@ -45,31 +45,73 @@ const Style = makeStyles({
 const Contact = () => {
 
     const classes = Style();
+
+
+    const [Fullname , useFullNme] = useState({
+      FName: "",
+      LName: "",
+      Email: "",
+      Mesg: "",
+    });
+  
+    const InputEvent = (event) =>{
+      // console.log(event.target.value);
+  
+      const {value , name} =event.target;
+  
+      useFullNme((pValue)=>{
+        return{
+          ...pValue,
+          [name]: value,
+  
+        };
+      });
+    };
+    const onSubmit = (event)=>{
+      event.preventDefault();
+      console.log("YOu First name is =" , Fullname.FName ,
+      "Your Last name is =" , Fullname.LName ,
+      "Your Email is =" , Fullname.Email ,
+      "Your msg is =" , Fullname.mesg)
+      alert("Your Query has been submitted sucessfully")
+    };
+  
   return (
     <>
+    <form onSubmit = {onSubmit}>
       <div className="Central_div">
         <div className="Middle_div">
           <span className="cont_contact">CONTACT US</span>
 
           <div className="inputs">
-            <TextField
-              name="fname"
+          <TextField
+            type="text"
+              name="FName"
               label="First Name"
               variant="outlined"
+              onChange={InputEvent}
+              value={Fullname.FName}
               style={{ width: "100%", marginRight: "23px" , marginBottom: "5px" }}
             />
 
             <TextField
+              name= 'LName'
               type="text"
               id="outlined-basic"
               label="Last Name"
+              onChange={InputEvent}
+              value={Fullname.LName}
               variant="outlined"
               style={{ width: "100%", marginRight: "2%" }}
             />
 
             <TextField
+              name="Email"
+              type="email"
               id="outlined-basic"
               label="Email Adress"
+              onChange={InputEvent}
+              value={Fullname.Email}
               variant="outlined"
               style={{ width: "100%", marginRight: "2%", color: "black" }}
             />
@@ -77,8 +119,11 @@ const Contact = () => {
 
           <div className="textfield">
             <TextField
+              name= "mesg"
               id="outlined-multiline-static"
               label="Entre Your Text Here"
+              onChange={InputEvent}
+              value={Fullname.mesg}
               multiline
               rows={10}
               style={{ width: "100%", marginTop: "2%" }}
@@ -93,21 +138,22 @@ const Contact = () => {
           </div>
 
           <div className="Contact_button" >
-            <Button id="materialbtn1" variant="contained" type="submit" className={classes.btnn}>
+            <Button id="materialbtn1" variant="contained" className={classes.btnn}>
               <GitHubIcon />
               &nbsp;&nbsp;&nbsp; Zendesk
             </Button>
-            <Button id="materialbtn2" variant="contained" type="submit" className={classes.btnn}>
+            <Button id="materialbtn2" variant="contained" className={classes.btnn}>
               <WhatsAppIcon />
               &nbsp;&nbsp;&nbsp;&nbsp; +923********
             </Button>
-            <Button id="materialbtn3" variant="contained" type="submit" className={classes.btnn}>
+            <Button id="materialbtn3" variant="contained" className={classes.btnn}>
               <MailOutlineIcon />
               &nbsp;&nbsp;&nbsp;&nbsp; @instaprint.pk
             </Button>
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 };
