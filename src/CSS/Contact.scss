@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.Central_div{
+    font-family: 'IBM Plex Sans', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+
+
+
+    .Middle_div{
+        // display: flex;
+    
+        justify-content: center;
+        padding: 15px 100px;
+        border: 2px solid black;
+        @media screen and (max-width: 850px) {
+            width: 600px;
+        }
+    }
+    h2{
+        color: brown;
+    }
+
+
+    .inputs{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1vw;
+
+    }
+    .cont_contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        line-height: 20px;
+        color: #292929;
+        font-weight: bolder;
+       margin-bottom: 40px;
+
+    }
+    .input_1{
+        margin-right: 5px;
+    }
+
+    .button{
+        color: brown;
+        display:inline-block;
+        width: 100%;
+        @media screen and (max-width: 850px) {
+            
+           
+
+        }
+
+    }
+    #materialbtn4{
+        @media screen and (max-width: 850px) {
+            width: 35%;
+
+        }
+
+    }
+
+    .Contact_button{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1vw;
+        
+
+
+    }
+ 
+    %materialbtn{
+        padding: 0;
+        .MuiSvgIcon-root{
+            font-size: 20px;
+        }
+        @media screen and (max-width: 850px) {
+                // color: red;
+                font-size: 10px;
+            }
+    }
+
+    #materialbtn1{
+        @extend %materialbtn
+    }
+    #materialbtn2{
+        @extend %materialbtn
+    }
+    #materialbtn3{
+        @extend %materialbtn
+    }
+
+    
+
+}
