@@ -1,4 +1,3 @@
-console.log("THIS IS REDUCER ==========================================")
 var initialState = [];
 
 const addToCart = (state = initialState, action) => {

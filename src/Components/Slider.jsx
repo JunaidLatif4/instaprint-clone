@@ -1,17 +1,20 @@
 // Import Requried Components
 import React, { useState } from 'react'
-
+// Material UI Icons :
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
-
+// CSS :
 import '../CSS/Slider.scss'
 
+// Slider IMG :
 import img1 from "../img/slider1.jpg";
 import img2 from "../img/slider2.jpg";
 import img3 from "../img/slider3.jpg";
 import img4 from "../img/slider4.jpg";
 
+
+// Costom IMG Component :
 const Img = (prop) => {
     return (
         <>
@@ -20,6 +23,7 @@ const Img = (prop) => {
     )
 }
 
+// Main SLIDER Component
 const Slider = () => {
 
     let imgArray = [
