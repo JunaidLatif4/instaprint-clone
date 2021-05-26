@@ -95,7 +95,6 @@ const SignUp = () => {
             }
           })
         }
-        console.log("OnChange = ", enteredData)
         break;
 
       case "lastname":
@@ -129,7 +128,6 @@ const SignUp = () => {
             [name]: value
           }
         })
-        // if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(enteredData.email)) {
         if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(enteredData.email)) {
           updateError((preValue) => {
             return {
@@ -252,24 +250,6 @@ const SignUp = () => {
       console.log("The Register DATA = " , res)
     })
   }
-
-
-  // async function userRegister()
-  // {
-  //   console.log("HELLOW JHSFSKJHDKH")
-
-  //   let result = await fetch("http://localhost:8000/api/signup",{
-  //     method:"POST",
-  //     body:JSON.stringify(enteredData),
-  //     headers:{
-  //       "Content-Type":"application/json",
-  //       "Accept":"application/json"
-  //     }
-  //   })
-  //   result = await result.json()
-  //   console.log("The Result = " , result)
-  // }
-
 
   return (
     <>
@@ -395,8 +375,6 @@ const SignUp = () => {
       </div>
 
       <div>
-        {error.emailError} <br />
-        {enteredData.email}
       </div>
     </>
   )

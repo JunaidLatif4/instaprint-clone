@@ -13,5 +13,5 @@ const remove = (data)=>{
 
 
 
-export default add;
-export {remove};
+
+export {add , remove};

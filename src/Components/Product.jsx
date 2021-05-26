@@ -4,7 +4,7 @@ import { useParams } from 'react-router'
 
 // Geting Cart From GlobalState :
 import { useSelector, useDispatch } from 'react-redux'
-import add from '../GlobalStates/actions/index';
+import {add} from '../GlobalStates/actions/index';
 
 // CSS :
 import "../CSS/Product.scss"
@@ -22,7 +22,6 @@ const Product = () => {
                     method: "get",
                     url: `http://127.0.0.1:8000/api/shop/${pid}`
                 }).then((responce) => {
-                    console.log("The PID = ", responce.data)
                     updateProduct(responce.data)
                 })
             }

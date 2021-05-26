@@ -18,14 +18,11 @@ const AllCards = () => {
                 url : "http://127.0.0.1:8000/api/shop/"
 
             }).then((responce)=>{
-                console.log(responce.data)
                 UpdateProduct(responce.data.results)
             })
         }
         getData()
     }, [])
-
-    console.log("The Products = " , product)
 
     return (
         <div className="card_container">

@@ -120,8 +120,6 @@ const Login = () => {
       default:
         break;
     }
-
-    console.log(value)
   }
 
   const [showPV, updateShowPV] = useState({
@@ -154,7 +152,7 @@ const Login = () => {
         "password" : enteredData.password
       }
     }).then((res)=>{
-      console.log("User LOGED IN ==============" , res.data['token'])
+      // console.log("User LOGED IN ==============" , res.data['token'])
       window.localStorage.setItem("token", res.data["token"])
       window.location.href = "/"
     }).catch((err)=>{

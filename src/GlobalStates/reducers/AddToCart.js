@@ -10,7 +10,9 @@ const addToCart = (state = initialState, action) => {
                     state.map((item) => item.id === productID ? { ...item, qty: item.qty + 1 } : item)
                 )
             } else {
-                state = [...state, { ...action.data, qty: 1 }]
+                return (
+                    state = [...state, { ...action.data, qty: 1 }]
+                )
             }
         case "REMOVE":
             var productID = action.data.id
@@ -20,7 +22,9 @@ const addToCart = (state = initialState, action) => {
                     state.map((item) => item.id === productID ? { ...item, qty: item.qty - 1 } : item)
                 )
             } else {
-                state = [...state, { ...action.data, qty: 1 }]
+                return (
+                    state = [...state, { ...action.data, qty: 1 }]
+                )
             }
         default: return state
     }

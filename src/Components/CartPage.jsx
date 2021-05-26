@@ -15,7 +15,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 // Geting Cart From GlobalState :
 import { useSelector, useDispatch } from 'react-redux'
-import add from '../GlobalStates/actions/index';
+import {add} from '../GlobalStates/actions/index';
 import {remove} from '../GlobalStates/actions/index';
 
 // CSS :
@@ -95,19 +95,17 @@ const MyTable = ({ data }) => {
 const CartPage = () => {
 
     var cartItems = useSelector((state) => state.addToCart)
+    
+    const [totalPrice , updateTotalPrice] = useState(0)
 
-    // var productCart = JSON.parse(localStorage.getItem('cart'))
-    // const [sum, updateSum] = useState(0)
-
-    // var t = Object.entries(productCart).map((item , key)=>{
-    //     var p = Number(item[1][2])
-    //     var q = Number(item[1][0])
-    //     return(p * q)
-    // })
-    // var as = t.reduce((x,y)=> x+y , 0)
-    // useEffect(() => {
-    //     updateSum(as)
-    // }, [])
+    useEffect(() => {
+        let total = 0;
+        cartItems.forEach(item => {
+            let itemTotal = item.qty * item.price
+            total += itemTotal
+        });
+        updateTotalPrice(total)
+    }, [cartItems])
 
     return (
         <div className="cart_container">
@@ -122,13 +120,12 @@ const CartPage = () => {
                             </div>
                         )
                 }
-                {cartItems[0]?.qty}
 
                 <div className="checkout">
                     <hr />
                     <div className="total">
-                        <p>Subtotal</p>
-                        <p className="amount">******</p>
+                        <p>SubTotal</p>
+                        <p className="amount">  RS. <span style={{color:"#ed1b24"}}> {totalPrice} </span></p>
                     </div>
                     <div className="checkout_btn">
                         <button className="btn">CHECKOUT</button>
