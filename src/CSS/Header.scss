@@ -43,7 +43,7 @@
         margin-right: 28%;
     }
     @media only screen and (max-width: 1200px) {
-        margin-right: 25%;
+        margin-right: 15%;
     }
 }
 
@@ -97,7 +97,15 @@
     }
     @media only screen and (max-width: 1200px) {
         margin-left: 12%;
-        padding: 3px 120px 3px 3px;
+        padding: 3px 100px 3px 3px;
+    }
+    @media only screen and (max-width: 750px) {
+        margin-left: 5%;
+        padding: 3px 70px 3px 3px;
+    }
+    @media only screen and (max-width: 650px) {
+        margin-left: 3%;
+        padding: 3px 20px 3px 3px;
     }
 }
 .help{

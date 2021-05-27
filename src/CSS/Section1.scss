@@ -3,17 +3,18 @@
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    height: 105vh;
+    padding: 3rem 0;
+    // height: 105vh;
 
-    @media only screen and (max-width: 1500px){
-        height: 85vh;
-    }
-    @media only screen and (max-width: 1400px){
-        height: 90vh;
-    }
-    @media only screen and (max-width: 600px){
-        height: auto;
-    }
+    // @media only screen and (max-width: 1500px){
+    //     height: 85vh;
+    // }
+    // @media only screen and (max-width: 1400px){
+    //     height: 90vh;
+    // }
+    // @media only screen and (max-width: 600px){
+    //     height: auto;
+    // }
 }
 .s1_box{
     display: flex;
@@ -23,7 +24,7 @@
     height: 100%;
 }
 .s1_box_heading{
-    padding-top: 40px;
+    // padding-top: 40px;
     font-size: 40px;
 
     @media only screen and (max-width: 1500px){
@@ -40,58 +41,53 @@
     }
 }
 .s1_card_box{
-    margin-top: 40px;
+    margin-top: 3rem;
     height: 85%;
     width:100%;
     display:grid;
     grid-template-columns:repeat(4 , 300px);
-    grid-column-gap: 40px;
-    grid-row-gap: 30px;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
     
     @media only screen and (max-width: 1500px){
-        margin-top: 10px;
-        grid-template-columns:repeat(4 , 200px);
-        grid-column-gap: 30px;
-        grid-row-gap: 20px;
+        grid-template-columns:repeat(4 , 230px);
         font-size: 15px;
     }
     @media only screen and (max-width: 1400px){
-        margin-top: 8px;
-        grid-template-columns:repeat(4 , 180px);
-        grid-column-gap: 25px;
-        grid-row-gap: 15px;
+        grid-template-columns:repeat(4 , 200px);
         font-size: 13px;
     }
     @media only screen and (max-width: 1200px){
-        margin-top: 8px;
+        grid-template-columns:repeat(4 , 180px);
+        font-size: 12px;
+    }
+    @media only screen and (max-width: 850px){
         grid-template-columns:repeat(4 , 160px);
-        grid-column-gap: 22px;
-        grid-row-gap: 10px;
+        font-size: 12px;
+    }
+    @media only screen and (max-width: 750px){
+        grid-template-columns:repeat(4 , 140px);
+        font-size: 12px;
+    }
+    @media only screen and (max-width: 680px){
+        grid-template-columns:repeat(4 , 120px);
         font-size: 12px;
     }
     @media only screen and (max-width: 600px){
-        margin-top: 8px;
         grid-template-columns:repeat(2 , 250px);
-        grid-column-gap: 22px;
-        grid-row-gap: 10px;
         font-size: 12px;
-        margin-bottom: 1rem;
+    }
+    @media only screen and (max-width: 550px){
+        grid-template-columns:repeat(2 , 210px);
+        font-size: 12px;
     }
     @media only screen and (max-width: 500px){
-        margin-top: 8px;
         grid-template-columns:repeat(2 , 180px);
-        grid-column-gap: 22px;
-        grid-row-gap: 10px;
         font-size: 12px;
-        margin-bottom: 1rem;
     }
     @media only screen and (max-width: 400px){
-        margin-top: 8px;
         grid-template-columns:repeat(2 , 150px);
-        grid-column-gap: 22px;
-        grid-row-gap: 10px;
         font-size: 12px;
-        margin-bottom: 1rem;
     }
 
 }
