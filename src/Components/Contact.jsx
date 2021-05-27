@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import MobileCont from "./MobileCont";
 
 import '../CSS/Contact.scss';
 
@@ -79,7 +80,7 @@ const Contact = () => {
   return (
     <>
     <form onSubmit = {onSubmit}>
-      <div className="Central_div">
+      <div className="Central_div_main">
         <div className="Middle_div">
           <span className="cont_contact">CONTACT US</span>
 
@@ -153,6 +154,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div className="mbl_cont">
+        <MobileCont/>
+      </div>
+
+
       </form>
     </>
   );
