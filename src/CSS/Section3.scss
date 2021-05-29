@@ -1,19 +1,9 @@
 .s3_container{
     background-color: #f4f4f4;
-    // height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @media only screen and (max-width: 1500px){
-        height: 40vh;
-    }
-    @media only screen and (max-width: 1400px){
-        height: 37vh;
-    }
-    @media only screen and (max-width: 1200px){
-        height: 35vh;
-    }
 }
 .s3_box{
     width: 80%;
