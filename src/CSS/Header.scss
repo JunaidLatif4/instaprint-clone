@@ -341,8 +341,17 @@
             img{
                 height: 5rem;
 
-                @media only screen and (max-width: 380px) {
+                @media only screen and (max-width: 400px) {
                     height: 4rem;
+                }
+                @media only screen and (max-width: 370px) {
+                    height: 3rem;
+                }
+                @media only screen and (max-width: 340px) {
+                    height: 2.5rem;
+                }
+                @media only screen and (max-width: 330px) {
+                    height: 2.3rem;
                 }
             }
         }
