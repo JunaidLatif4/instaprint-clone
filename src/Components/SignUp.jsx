@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, Route, useLocation } from 'react-router-dom';
 import axois from "axios";
 import {
   Typography, Button, Grid, Checkbox, TextField, OutlinedInput,
@@ -29,6 +30,14 @@ const Style = makeStyles({
     "&:hover": {
       color: "red",
       transition: ".5s ease-in-out"
+    }
+  },
+  logbtn: {
+    color: "yellow",
+    fontWeight: "bolder",
+    margin: "0 5px",
+    "&:hover": {
+      color: "black"
     }
   },
   disbtn: {
@@ -233,27 +242,39 @@ const SignUp = () => {
     })
 
   }
-          // ------------------------USER REGISTER------------------------
-  const userRegister = async ()=>{
+  // ------------------------USER REGISTER------------------------
+  const userRegister = async () => {
     await axois({
-      method : "post",
-      url : "http://127.0.01:8000/api/register/",
-      headers : RegisterHeader ,
-      data : {
-        "username" : enteredData.firstname,
-        "password" : enteredData.password,
-        "first_name" : enteredData.firstname,
-        "last_name" : enteredData.lastname,
-        "email" : enteredData.email
+      method: "post",
+      url: "http://127.0.01:8000/api/register/",
+      headers: RegisterHeader,
+      data: {
+        "username": enteredData.firstname,
+        "password": enteredData.password,
+        "first_name": enteredData.firstname,
+        "last_name": enteredData.lastname,
+        "email": enteredData.email
       }
-    }).then((res)=>{
-      console.log("The Register DATA = " , res)
+    }).then((res) => {
+      console.log("The Register DATA = ", res)
     })
   }
 
   return (
     <>
       <div className="signup_container">
+      <div className="login_btn_container">
+                    <NavLink to="/login" style={{ textDecoration: "none" }}>
+                        <Button
+                            id="logbtn"
+                            variant="contained"
+                            endIcon={<SharpIcon />}
+                            className={classes.btn}
+                        >
+                            Already Have an Account <span className={classes.logbtn}> LOG IN</span>
+                        </Button>
+                    </NavLink>
+                </div>
         <div className="signup_box">
           <Typography variant="h5" style={{ textAlign: "center" }}>
             SIGN-UP
@@ -282,9 +303,9 @@ const SignUp = () => {
             <Phone
               variant="outlined"
               defaultCountry={'pk'}
-              onlyCountries = {['pk']}
-              style={{ width: "100%"}}
-              
+              onlyCountries={['pk']}
+              style={{ width: "100%" }}
+
             />
 
             <TextField

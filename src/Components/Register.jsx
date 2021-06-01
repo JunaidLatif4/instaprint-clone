@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink, Route, useLocation } from 'react-router-dom';
 import {
     Typography, Button, Grid, Checkbox, TextField, OutlinedInput,
     FormControl, InputLabel, InputAdornment, IconButton
@@ -41,21 +40,7 @@ const Register = () => {
     return (
         <>
             <div className="register_container">
-                <div className="login_btn_container">
-                    <NavLink to="/login" style={{ textDecoration: "none" }}>
-                        <Button
-                            variant="contained"
-                            endIcon={<SharpIcon />}
-                            className={classes.btn}
-                        >
-                            Already Have an Account <span className={classes.logbtn}> LOG IN</span>
-                        </Button>
-                    </NavLink>
-                </div>
-                <div className="signup">
                     <SignUp />
-
-                </div>
             </div>
         </>
     )
