@@ -252,7 +252,6 @@
     border-bottom: 2px solid black;
 
     @media only screen and (max-width: 1000px){
-        // display: inline-block;
         justify-content: unset;
         align-items: center;
     }
@@ -264,6 +263,10 @@
     }
     @media only screen and (max-width: 1400px) {
         padding: 5px 0px;
+    }
+
+    .btn_container{
+        margin-left: 1rem;
     }
 
 
@@ -330,10 +333,26 @@
 
 
         .mbl_nav_img{
+            display: flex;
+            // justify-content: center;
+            align-items: center;
             height: 10vh;
+            margin-left: 1rem;
             img{
-                height: 100%;
-                margin-left: 1rem;
+                height: 5rem;
+
+                @media only screen and (max-width: 400px) {
+                    height: 4rem;
+                }
+                @media only screen and (max-width: 370px) {
+                    height: 3rem;
+                }
+                @media only screen and (max-width: 340px) {
+                    height: 2.5rem;
+                }
+                @media only screen and (max-width: 330px) {
+                    height: 2.3rem;
+                }
             }
         }
 

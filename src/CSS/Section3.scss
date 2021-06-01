@@ -1,24 +1,15 @@
 .s3_container{
     background-color: #f4f4f4;
-    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @media only screen and (max-width: 1500px){
-        height: 40vh;
-    }
-    @media only screen and (max-width: 1400px){
-        height: 37vh;
-    }
-    @media only screen and (max-width: 1200px){
-        height: 35vh;
-    }
 }
 .s3_box{
     width: 80%;
     display: flex;
     flex-direction: column;
+    margin: 5rem 0;
 
     @media only screen and (max-width: 1500px){
         width: 70%;
@@ -121,11 +112,17 @@
     overflow: hidden;
 }
 .client_slider{
+    display: flex;
+    justify-content: center;
     position: relative;
     min-width: 100%;
     transition: .5s;
     img{
-        width: 100%;
+        width: 85%;
+
+        @media only screen and (max-width: 500px){
+            width: 75%;
+        }
     }
 }
 
@@ -156,10 +153,12 @@
 #prevbtn{
     left: 0;
     @extend %btn-style;
+    margin-left: 1rem;
     
 }
 #nextbtn{
     right: 0;
     @extend %btn-style;
+    margin-right: 1rem;
 
 }
