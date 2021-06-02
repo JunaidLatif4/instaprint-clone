@@ -51,7 +51,8 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="main_div">
+    <div className="Checkout_full_div">
+      <div className="Checkout_main_div">
         <div className="header_div">
           <p className="header_ptag">SHOPPING INFORMATION</p>
           <br/>
@@ -116,6 +117,7 @@ const Checkout = () => {
             variant="outlined"
             style={{ width: "100%", marginBottom: "10px" }}
           />
+             </div>
              </div>
           <h3>Payment Mehtod</h3>
           <FormControlLabel
