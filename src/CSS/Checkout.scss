@@ -1,14 +1,29 @@
-.main_div{
- font-family: sans-serif;
-      color: #221715;
-      margin: 25px 550px;
+.Checkout_full_div{
 
-
-.header_div{
     width: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    display: flex;
+    margin: 50px 10px;
+    border: 2px solid red;
+    .Checkout_main_div{
+        width: 50%;
+        @media screen and (max-width: 1000px) {
+            width: 80%;
+        }
+        @media screen and (max-width: 700px) {
+            width: 90%;
+        }
+        @media screen and (max-width: 500px) {
+            width: 100%;
+        }
+        
+   
+
+
+.header_div{
+   
     text-align: center;
 
 .header_ptag{
@@ -16,11 +31,23 @@
     letter-spacing: .22em;
     margin-bottom: -11px;
     font-weight: 400;
+    @media screen and (max-width: 350px) {
+        font-size: 14px;
+    letter-spacing: .18em;
+    font-weight: bolder;
+    }
+
 }
 .header_ptag2{
     font-size: 15px;
     letter-spacing: .02em;
     font-weight: 400;
+    @media screen and (max-width: 350px) {
+        font-size: 13px;
+    letter-spacing: .01em;
+    font-weight: bolder;
+    }
+
 
 }}
 
@@ -28,6 +55,10 @@
     font-size: 18px;
     margin-bottom: -7px;
     margin-top: 12px;
+    @media screen and (max-width: 350px) {
+        font-size: 13px;
+    font-weight: bolder;
+    }
 }
 .about_input{
     flex-direction: column;
@@ -36,3 +67,5 @@
 
 
 }
+}
+
