@@ -258,7 +258,8 @@ const Header = () => {
                             <li><NavLink to="/card/bu"> All &nbsp; |</NavLink></li>
                             {/* <li><NavLink to="/card/business_card"> Business Cards &nbsp; |</NavLink></li> */}
                             <li><NavLink to="/profile"> Business Cards &nbsp; |</NavLink></li>
-                            <li><NavLink to="/card/clothing_bags"> Clothing, Bags & Boxes  &nbsp; |</NavLink></li>
+                            {/* <li><NavLink to="/card/clothing_bags"> Clothing, Bags & Boxes  &nbsp; |</NavLink></li> */}
+                            <li><NavLink to="/checkout"> Clothing, Bags & Boxes  &nbsp; |</NavLink></li>
                             <li><NavLink to="/card/markiting_material"> Markiting Material &nbsp; |</NavLink></li>
                             <li><NavLink to="/card/office_stationary"> Office Stationary &nbsp; |</NavLink></li>
                             <li><NavLink to="/card/promotional_items"> Promotional Items &nbsp; |</NavLink></li>

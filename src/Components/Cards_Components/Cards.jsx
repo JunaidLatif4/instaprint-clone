@@ -5,12 +5,15 @@ import './css/Cards.scss'
 
 const Cards = ({ data }) => {
     return (
-        <NavLink to={`/product/${data.id}`}>
         <div className="cards_box">
+            <NavLink to={`/product/${data.id}`}>
             <div className="img_box">
                 <img src={data.img} alt="Error" />
             </div>
             <div className="data">
+                <div className="title">
+                    {data.title}
+                </div>
                 <div className="price">
                     {data.price}
                 </div>
@@ -18,8 +21,8 @@ const Cards = ({ data }) => {
                     {data.dis}
                 </div>
             </div>
-        </div>
         </NavLink>
+        </div>
     )
 }
 
