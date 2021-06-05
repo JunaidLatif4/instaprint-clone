@@ -6,14 +6,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import "../CSS/Checkout.scss";
 
-import { withStyles } from '@material-ui/core/styles';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import { Fullscreen } from "@material-ui/icons";
+
 
 
 
@@ -39,118 +35,142 @@ const Style = makeStyles({
 const Checkout = () => {
   const classes = Style();
 
-  const [state, setState] = React.useState({
-    checkedB: false,
-    checkedC: false,
+  const [FullName, useFullName] = useState({
+    checkedB: "",
+    checkedC: "",
+    FName: ""
+
   });
 
-  const handleChange = (event) => {
-    setState({[event.target.name]: event.target.checked });
-    console.log(state.checkedB)
+  const InputEvent = (event) => {
+    // useFullName({ [event.target.name]: event.target.checked });
+
+    const { value, name } = event.target;
+
+    useFullName((pValue) => {
+      return {
+        ...pValue,
+        [name]: value,
+      }
+    })
+
+    console.log("Checked ==========" , event)
+    console.log("Your First Name is =", FullName.FName)
   };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    alert("Form Submitted")
+  }
 
   return (
     <>
-    <div className="Checkout_full_div">
-      <div className="Checkout_main_div">
-        <div className="header_div">
-          <p className="header_ptag">SHOPPING INFORMATION</p>
-          <br/>
-          <p className="header_ptag2">Where your order will be delivered</p>
-        </div>
-        <div className="about">
-          <p className="about_ptag">Shipping Details</p>\
+      <form onSubmit={onSubmit}>
+        <div className="Checkout_full_div">
+          <div className="Checkout_main_div">
+            <div className="header_div">
+              <p className="header_ptag">SHOPPING INFORMATION</p>
+              <br />
+              <p className="header_ptag2">Where your order will be delivered</p>
+            </div>
+            <div className="about">
+              <p className="about_ptag">Shipping Details</p>\
             <div className="about_input">
-            <TextField
-              type="text"
-              name="FName"
-              label="First Name"
-              variant="outlined"
-              style={{ width: "100%", marginRight: "15px", marginBottom: "10px" }}
+                <TextField
+                  type="text"
+                  name="FName"
+                  label="First Name"
+                  variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.FName}
+                  style={{ width: "100%", marginRight: "15px", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="text"
+                  name="LName"
+                  label="Last Name"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="text"
+                  name="ADDRESS"
+                  label="ADDRESS"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="text"
+                  name="COUNTRY"
+                  label="COUNTRY"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="text"
+                  name="STATE"
+                  label="STATE/PROVINCE"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="text"
+                  name="CITY"
+                  label="CITY"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="number"
+                  name="POSTAL CODE"
+                  label="POSTAL CODE"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+                <TextField
+                  type="number"
+                  name="MOBILE NUMBER"
+                  label="MOBILE NUMBER"
+                  variant="outlined"
+                  style={{ width: "100%", marginBottom: "10px" }}
+                />
+              </div>
+            </div>
+            <h3>Payment Mehtod</h3>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  // checked={FullName.checkedB}
+                  onChange={InputEvent}
+                  name="checkedB"
+                  color="primary"
+                />
+              }
+              label="EasyPaisa"
+            /> <br />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  // checked={FullName.checkedC}
+                  onChange={InputEvent}
+                  name="checkedC"
+                  color="primary"
+                />
+              }
+              label="JazzCash"
             />
-            <TextField
-              type="text"
-              name="LName"
-              label="Last Name"
-              variant="outlined"
-              style={{ width: "100%", marginBottom: "10px" }}
-            />
-          <TextField
-            type="text"
-            name="ADDRESS"
-            label="ADDRESS"
-            variant="outlined"
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-          <TextField
-            type="text"
-            name="COUNTRY"
-            label="COUNTRY"
-            variant="outlined"
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-          <TextField
-            type="text"
-            name="STATE"
-            label="STATE/PROVINCE"
-            variant="outlined"
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-          <TextField
-            type="text"
-            name="CITY"
-            label="CITY"
-            variant="outlined"
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-          <TextField
-            type="number"
-            name="POSTAL CODE"
-            label="POSTAL CODE"
-            variant="outlined"
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-          <TextField
-            type="number"
-            name="MOBILE NUMBER"
-            label="MOBILE NUMBER"
-            variant="outlined"
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-             </div>
-             </div>
-          <h3>Payment Mehtod</h3>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={state.checkedB}
-                onChange={handleChange}
-                name="checkedB"
-                color="primary"
-              />
-            }
-            label="EasyPaisa"
-          /> <br />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={state.checkedC}
-                onChange={handleChange}
-                name="checkedC"
-                color="primary"
-              />
-            }
-            label="JazzCash"
-          />
-           <div className="button" >
+            <div className="button" >
               <Button id='materialbtn4' variant="contained" type="submit" className={classes.btn}>
                 PLACE ORDER
             </Button>
             </div>
+          </div>
+
         </div>
-
-      </div>
-
+      </form>
+              {FullName.FName}
+              {FullName.checkedB}
+              {FullName.checkedC}
     </>
   )
 }
