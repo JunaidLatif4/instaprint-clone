@@ -36,8 +36,8 @@ const Checkout = () => {
   const classes = Style();
 
   const [FullName, useFullName] = useState({
-    checkedB: "",
-    checkedC: "",
+    checkedA: false,
+    checkedB: false,
     FName: ""
 
   });
@@ -45,7 +45,7 @@ const Checkout = () => {
   const InputEvent = (event) => {
     // useFullName({ [event.target.name]: event.target.checked });
 
-    const { value, name } = event.target;
+    const { value, name , checked } = event.target;
 
     useFullName((pValue) => {
       return {
@@ -53,13 +53,28 @@ const Checkout = () => {
         [name]: value,
       }
     })
+ 
 
-    console.log("Checked ==========" , event)
-    console.log("Your First Name is =", FullName.FName)
+    console.log("Your First Name is =", event.target.name)
   };
 
+  const CheckedInputEvent = (event) =>{
+
+    const { name , checked} = event.target;
+
+    useFullName((pValue) => {
+      return {
+        ...pValue,
+        [name]: checked,
+      }
+    })
+
+  }
+  
   const onSubmit = (event) => {
     event.preventDefault();
+    console.log("your first name is =" , FullName.FName)
+    console.log("Checked ==========" , FullName.checkedA)
     alert("Form Submitted")
   }
 
@@ -142,7 +157,7 @@ const Checkout = () => {
                 <Checkbox
                   // checked={FullName.checkedB}
                   onChange={InputEvent}
-                  name="checkedB"
+                  name="checkedA"
                   color="primary"
                 />
               }
@@ -153,7 +168,7 @@ const Checkout = () => {
                 <Checkbox
                   // checked={FullName.checkedC}
                   onChange={InputEvent}
-                  name="checkedC"
+                  name="checkedB"
                   color="primary"
                 />
               }
@@ -168,9 +183,6 @@ const Checkout = () => {
 
         </div>
       </form>
-              {FullName.FName}
-              {FullName.checkedB}
-              {FullName.checkedC}
     </>
   )
 }
