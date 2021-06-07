@@ -1,9 +1,8 @@
 .mbl_footer{
     margin: 0%;
-    padding-top: 2rem;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     background: rgb(27, 25, 25);
-    color: rgb(252, 252, 252);
+    color: #cfcfcf;
 
 
     @media only screen and (min-width: 801px) {
@@ -13,170 +12,60 @@
 
 }
 
-.footer_full{
-    height: auto;
-    margin: 0 2vw;
+.mbl_footer_container{
 
-    .newsletter_head{
-        color: rgb(252, 252, 252);
-
-
+    padding: 1rem .5rem;
+    h3{
+        margin-bottom: .5rem;
     }
-    .newsletter_para{
-        color: rgb(252, 252, 252);
-        font-size: 72%;
-        padding-top: 1rem;
-        padding-bottom: 0.5rem;
-
-    }
-    .newsletter_email{
-        width: 100%;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-     
-        border-radius: 3px;
-        background: rgb(253, 250, 250);
+        
+    .mbl_footer_newsletter{
         margin-bottom: 1rem;
-        border: none;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid #cfcfcf;
 
-    }
-    .newsletter_btn{
-        background: rgb(204, 40, 40);
-        width: 25%;
-        padding: 0.4rem 0;
-        margin-bottom: 1%;
-        outline: none;
-        border-radius: 3px;
-        color: white;
-        border: none;
-    }
-    .newsletter_hr{
-        margin: 1rem 0;
-    }
-
-
-}
-
-// ========================================================
-
-
-.footer_payment{
-    margin: 30px 0;
-}
-.payment_head{
-    color: rgb(252, 252, 252);
-
-}
-.payment_anchor{
-    margin-top: 1%;
-    .anchor{
-        color: red;
-        margin-right: 2%;
-        text-decoration: none;
-    }
-}
-
-//======================================================
-
-
-.branches_main{
-    margin-top: 1.5%;
-    width: 50vw;
-
-    li{
-        display: list-item;
-        list-style: none;
-        text-align: -webkit-match-parent;
-
-        b{
-            min-width: 90px;
-            width: min-content;
-            float: left;
-            
-        }
-
+        
         p{
-            overflow: auto;
+            font-size: small;
+            margin-bottom: .3rem;
+        }
+        input{
+            padding: .5rem;
+            border-radius: 5px;
+            outline: none;
         }
     }
-    
-}
 
-//====================================================
+    .mbl_footer_payment{
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #cfcfcf;
 
-.contact_main{
-    margin-top: 1.5%;
-    width: 45vw;
-    
-}
-.contact_para{
-    font-size: 70%;
-    margin-top: 1rem;
-}
-.contact_title{
-    font-size: 110%;
-   float: right;
-}
-
-
-//=======================================================
-
-.company_main{
-    margin-top: 1.5%;
-    width:70vw;
-    
-}
-.company_para{
-    font-size: 90%;
-    margin-top: 2rem;
-}
-
-
-
-
-.company_anchors{
-font-size: 90%;
-margin: 1rem 0;
-text-decoration: none;
-
-.company_para1{
-
-    text-decoration: none;
-   
-}
-
-.company_para2{
-   float: right;
-    
-    text-decoration: none;
-}
-
-
-}
- //=============================================
-
- .icons{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     .anchor{
-        color: red;
-        margin-right: 2%;
-        text-decoration: none;
-
-     }
- }
-
-//  ======================================================
-
-.copyright{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .copy{
-        font-size: 90%;
+        img{
+            height: 2.5rem;
+            margin: 1rem 0;
+        }
     }
 
-}
+    .mbl_footer_branches{
 
+        ul{
+            list-style: none;
+
+            li{
+                display: list-item;
+                text-align: -webkit-match-parent;
+
+                b{
+                    float: left;
+                    min-width: 90px;
+                    width: min-content;
+                }
+                p{
+                    overflow: auto;
+                    margin: 2rem 1rem;
+                }
+            }
+        }
+    }
+}

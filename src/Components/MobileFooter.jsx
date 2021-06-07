@@ -1,157 +1,62 @@
 import React from 'react';
 
+import { Button } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+
+import payment from '../img/pay.jpg';
+
+
+
 import '../CSS/MobileFooter.scss';
 
+
+const style = makeStyles({
+    btn: {
+        margin: "1rem 0",
+        width: "25%",
+        background: "red",
+        height: "2rem",
+        color: "#fff",
+        "&:hover": {
+            color: "red",
+            transition: ".5s ease-in-out"
+        }
+    }
+})
+
 const Footer = () => {
+    const classes = style();
     return (
-        <div className="all">
-            <div className="footer_full">
-                <div className="footer_newsletter">
-                    <h3 className="newsletter_head">
-                        NEWSLETTER
-                </h3>
-                    <p className="newsletter_para">
-                        For Deals And Offers Please Subscribe
-                </p>
-                    <input type="email" className="newsletter_email"
-                        placeholder="Type Email Here" />
-                    <button className="newsletter_btn">Subscribe</button>
-                    <hr className="newsletter_hr" />
-
-                </div>
-                <div className="footer_payment">
-                    <h3 className="payment_head">
-                        Payment Methods
-                </h3>
-                    <div className="payment_anchor">
-
-                        <a className="anchor" href="bjo">hello</a>
-                        <a className="anchor" href="bjo">hello</a>
-                        <a className="anchor" href="bjo">hello</a>
-                    </div>
-
-
-
-
-                </div>
-                <div className="branches">
-                    <hr className="newsletter_hr" />
-                    <h3 className="payment_head">
-                        BRANCHES
-                    </h3>
-                    <ul className="branches_main">
-                        <li className="branches_para">
-                            <b> Gulberg</b>
-                            <p className="title">
-                                124 - P, M.M Alam Road Gulberg -11 Lahore
-                            </p>
-                        </li>
-                        <li className="branches_para">
-                            <b> Corporate</b>
-                            <p className="title">
-                                1st floor 124 - P, M.M Alam Road Gulberg -11 Lahore
-                            </p>
-                        </li>
-                        <li className="branches_para">
-                            <b> Office:</b>
-                            <p className="title">
-                                2 - H, Commercial Area, DHA, Lahore
-                            </p>
-                        </li>
-                    </ul>
-
-
-
-
-
-                </div>
-                <div className="footer_contact">
-                    <hr className="newsletter_hr" />
-
-                    <h3 className="payment_head" id='head'>
-                        CONTACT
-                    </h3>
-                    <div className="contact_main">
-                        <p className="contact_para">
-                            <span className="contact_title">
-                                +923004050673
-                            </span>
-                            WhatsApp:
-                        </p>
-                        <p className="contact_para">
-                            <span className="contact_title">
-                                +923174919633
-                            </span>
-                                Phone:
-                        </p>
-                        <p className="contact_para">
-                            <span className="contact_title">
-                                zahidghafoor40@gmail.com
-                            </span>
-                              Email:
-                        </p>
-                    </div>
-
-
-                </div>
-
-                <div className="footer_company">
-                    <hr className="newsletter_hr" />
-
-                    <h3 className="payment_head" id='head'>
-                        COMPANY
-                    </h3>
-
-                    <div className="company_main">
-                        <div className="company_anchors">
-                            <a href="" className="company_para1"> About Us
-                            <a href="" className="company_para2"> Contact Us
-                            </a>
-                            </a>
-                        </div>
-                        <div className="company_anchors">
-                            <a href="" className="company_para1">FAQ'S
-                            <a href="" className="company_para2">  Privacy Policy
-                            </a>
-                            </a>
-                        </div>
-                        <div className="company_anchors">
-                            <a href="" className="company_para1"> Return Exchange
-                            <a href="" className="company_para2"> Careers Internship
-                            </a>
-                            </a>
-                        </div>
-
-                        <div className="company_anchors">
-                            <a href="" className="company_para1"> How to place an order
-                            <a href="" className="company_para2"> Corporate Profile
-                            </a>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className="social">
-                    <hr className="newsletter_hr" />
-                    <div className="icons">
-
-                        <a className="anchor" href="bjo">hello</a>
-                        <a className="anchor" href="bjo">hello</a>
-                        <a className="anchor" href="bjo">hello</a>
-                        <a className="anchor" href="bjo">hello</a>
-
-                    </div>
-                    <hr className="newsletter_hr" />
-
-                </div>
-
-                <div className="copyright">
-                    <p className="copy">
-                        2020 jarviz All rights reserved.
-                    </p>
-                </div>
-
+        <div className="mbl_footer_container">
+            <div className="mbl_footer_newsletter">
+                <h3>NEWSLETTER</h3>
+                <p>For Deals And Offers Please Subscribe</p>
+                <input type="email" placeholder="Type Email Here" />
+                <Button className={classes.btn}> Subscribe </Button>
+            </div>
+            <div className="mbl_footer_payment">
+                <h3>Payment Methods</h3>
+                <img src={payment} alt="ERROR" />
+            </div>
+            <div className="mbl_footer_branches">
+                <h3>BRANCHES</h3>
+                <ul>
+                    <li>
+                        <b>Gulberg :</b>
+                        <p>124 - P, M.M. Alam Road Gulberg -II Lahore</p>
+                    </li>
+                    <li>
+                        <b>Corporate Office :</b>
+                        <p>1st floor 124 - P, M.M. Alam Road Gulberg -II Lahore</p>
+                    </li>
+                    <li>
+                        <b>Defence :</b>
+                        <p>Plaza N0. 1/Cca, 1st Floor Above HBL Bank Near Jalal Sons DHA Phase 5, DHA Lahore</p>
+                    </li>
+                </ul>
+            </div>
+            <div className="mbl_footer_contact">
+                
             </div>
         </div>
     )
