@@ -1,8 +1,8 @@
 // Import Requried Components
 import React, { useState } from 'react'
-// Material UI Icons :
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+// Material UI Carousel :
+import Carousel from 'react-material-ui-carousel'
+import { Paper, Button } from '@material-ui/core'
 
 // CSS :
 import '../CSS/Slider.scss'
@@ -18,7 +18,9 @@ import img4 from "../img/slider4.jpg";
 const Img = (prop) => {
     return (
         <>
-            <img src={prop.src} alt="ERROR" id="img" />
+            <Paper className="slider_box">
+                <img src={prop.src} alt="ERROR" id="img" />
+            </Paper>
         </>
     )
 }
@@ -27,42 +29,21 @@ const Img = (prop) => {
 const Slider = () => {
 
     let imgArray = [
-        <Img src={img1} />,
-        <Img src={img2} />,
-        <Img src={img3} />,
-        <Img src={img4} />
+        img1,
+        img2,
+        img3,
+        img4
     ]
-    const [x, setx] = useState(0);
-
-    const prev = () => {
-        x == 0 ? setx(-100 * (imgArray.length - 1)) : setx(x + 100);
-    }
-    const next = () => {
-        (x == -100 * (imgArray.length - 1)) ? setx(0) : setx(x - 100);
-    }
-
-    // setInterval(next, 7000)
-
 
     return (
         <>
             <div className="slider_container">
-                {
-                    imgArray.map((item, index) => {
-                        return (
-                            <>
-                                <div className="slider" key={index} style={{ transform: `translateX(${x}%)` }}>
-                                    {item}
-                                </div>
-                            </>
-                        )
-                    })
-                }
-
-                <button id="prevbtn" onClick={prev}> <NavigateBeforeIcon className="navbtn"/> </button>
-                <button id="nextbtn" onClick={next}> <NavigateNextIcon className="navbtn"/> </button>
+                <Carousel >
+                    {
+                        imgArray.map((item, i) => <Img key={i} src={item} />)
+                    }
+                </Carousel>
             </div>
-
         </>
     )
 }
