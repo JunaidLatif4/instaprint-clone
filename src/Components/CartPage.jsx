@@ -129,6 +129,7 @@ const CartPage = () => {
                     </div>
                     <div className="checkout_btn">
                         <button className="btn">CHECKOUT</button>
+                    
                     </div>
                 </div>
             </div>

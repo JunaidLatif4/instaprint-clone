@@ -1,4 +1,5 @@
 .cards_box{
+    position: relative;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -7,15 +8,40 @@
         text-decoration: none;
     }
 
+    .addtocart{
+        display: inline-block;
+        position: absolute;
+        right: 6px;
+        top: 5px;
+
+        button{
+            width: 70px;
+            text-align: CENTER;
+            height: 25px;
+            background: #ed1c24;
+            line-height: 25px;
+            border: 0;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+                    
+                }
+
+    }
+
     .img_box{
         height: 75%;
         width: 100%;
+        // background-color: rgb(63, 117, 117);
 
         img{
             height: 100%;
             width: 100%;
             object-fit: contain;
         }
+        
     }
 
     .data{
