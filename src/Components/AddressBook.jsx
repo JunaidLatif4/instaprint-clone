@@ -65,7 +65,7 @@ const AddressBook = () => {
                 country: userProfile.country
             }
         })
-    }, [])
+    }, [userProfile])
 
     const submit = async (event) => {
         event.preventDefault();
