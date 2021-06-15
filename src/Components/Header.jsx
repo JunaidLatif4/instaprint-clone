@@ -203,8 +203,8 @@ const Header = () => {
 
                 <div className="header_contant">
                     <div className="container">
-                        <NavLink to="/">
-                            <img src={Logo} alt="Error" className="img" />
+                        <NavLink to="/" className="img">
+                            <img src={Logo} alt="Error"/>
                         </NavLink>
 
                         <input type="text" name="search" id="search" className="search" />

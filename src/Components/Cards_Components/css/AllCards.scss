@@ -32,13 +32,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 2vw ;
-        grid-template-rows: 30vh;
+        grid-template-rows: repeat(auto-fill , 30vh);
 
 
         @media only screen and (max-width: 600px) {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 3vw ;
-        grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 3vw ;
+            grid-template-rows: auto;
         }
     }
 }

@@ -11,11 +11,11 @@ const Cards = ({ data }) => {
                 <img src={data.img} alt="Error" />
             </div>
             <div className="data">
+                <div className="price">
+                   <b>Starting From PKR</b> {data.price}.00
+                </div>
                 <div className="title">
                     {data.title}
-                </div>
-                <div className="price">
-                    {data.price}
                 </div>
                 <div className="dis">
                     {data.dis}

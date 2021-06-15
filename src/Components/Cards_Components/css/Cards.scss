@@ -8,6 +8,7 @@
     }
 
     .img_box{
+        box-shadow: 0 3px 6px 0 #00000029;
         height: 75%;
         width: 100%;
 
@@ -19,7 +20,7 @@
     }
 
     .data{
-        background: #d4d4d4;
+        background: #e1e1e159;
         border-radius: 0 0 5px 5px;
         display: flex;
         flex-direction: column;
@@ -29,12 +30,11 @@
         padding: 10px;
 
         .title{
-            font-weight: bold;
         }
 
         .price{
             font-weight: bold;
-            font-size: large;
+            font-size: 1rem;
 
             @media only screen and (max-width: 600px) {
                 font-size: initial;

@@ -70,18 +70,19 @@
     }
 }
 .img{
-    height: 80px;
-    width: 160px;
+    height: 5rem;
+    width: auto;
+
+    img{
+        height: 100%;
+        width: auto;
+    }
 
     @media only screen and (max-width: 1500px) {
-        width: 140px;
-        height: 60px;
+        height: 4rem;
     }
-    @media only screen and (max-width: 1400px) {
-        width: 130px;
-    }
-    @media only screen and (max-width: 1200px) {
-        width: 120px;
+    @media only screen and (max-width: 800px) {
+        height: 3rem;
     }
 }
 .search{
