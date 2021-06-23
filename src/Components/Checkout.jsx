@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from 'react-router-dom';
 
 
-import "../CSS/Checkout.scss";
+import "./Checkout.scss";
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -38,14 +39,22 @@ const Checkout = () => {
   const [FullName, useFullName] = useState({
     checkedA: false,
     checkedB: false,
-    FName: ""
+    FName: "",
+    LName: "",
+    ADDRESS: "",
+    COUNTRY: "",
+    STATE: "",
+    CITY: "",
+    POSTAL: "",
+    MOBILE: "",
+
 
   });
 
   const InputEvent = (event) => {
     // useFullName({ [event.target.name]: event.target.checked });
 
-    const { value, name , checked } = event.target;
+    const { value, name, checked } = event.target;
 
     useFullName((pValue) => {
       return {
@@ -53,14 +62,13 @@ const Checkout = () => {
         [name]: value,
       }
     })
- 
 
-    console.log("Your First Name is =", event.target.name)
+
   };
 
-  const CheckedInputEvent = (event) =>{
+  const CheckedInputEvent = (event) => {
 
-    const { name , checked} = event.target;
+    const { name, checked } = event.target;
 
     useFullName((pValue) => {
       return {
@@ -70,11 +78,19 @@ const Checkout = () => {
     })
 
   }
-  
+
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log("your first name is =" , FullName.FName)
-    console.log("Checked ==========" , FullName.checkedA)
+    console.log("your first name is =", FullName.FName)
+    console.log("your LAST name is =", FullName.LName)
+    console.log("your Adress is =", FullName.ADDRESS)
+    console.log("your country is =", FullName.COUNTRY)
+    console.log("your State is =", FullName.STATE)
+    console.log("your city is =", FullName.CITY)
+    console.log("your postal code is =", FullName.POSTAL)
+    console.log("your MObile Number  is =", FullName.MOBILE)
+    console.log("Checked ==========", FullName.checkedA)
+    console.log("Checked ==========", FullName.checkedB)
     alert("Form Submitted")
   }
 
@@ -90,7 +106,7 @@ const Checkout = () => {
             </div>
             <div className="about">
               <p className="about_ptag">Shipping Details</p>\
-            <div className="about_input">
+              <div className="about_input">
                 <TextField
                   type="text"
                   name="FName"
@@ -105,6 +121,8 @@ const Checkout = () => {
                   name="LName"
                   label="Last Name"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.LName}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <TextField
@@ -112,6 +130,8 @@ const Checkout = () => {
                   name="ADDRESS"
                   label="ADDRESS"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.ADDRESS}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <TextField
@@ -119,6 +139,8 @@ const Checkout = () => {
                   name="COUNTRY"
                   label="COUNTRY"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.COUNTRY}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <TextField
@@ -126,6 +148,8 @@ const Checkout = () => {
                   name="STATE"
                   label="STATE/PROVINCE"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.STATE}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <TextField
@@ -133,20 +157,26 @@ const Checkout = () => {
                   name="CITY"
                   label="CITY"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.CITY}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <TextField
                   type="number"
-                  name="POSTAL CODE"
+                  name="POSTAL"
                   label="POSTAL CODE"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.POSTAL}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
                 <TextField
                   type="number"
-                  name="MOBILE NUMBER"
+                  name="MOBILE"
                   label="MOBILE NUMBER"
                   variant="outlined"
+                  onChange={InputEvent}
+                  value={FullName.MOBILE}
                   style={{ width: "100%", marginBottom: "10px" }}
                 />
               </div>
@@ -155,8 +185,8 @@ const Checkout = () => {
             <FormControlLabel
               control={
                 <Checkbox
-                  // checked={FullName.checkedB}
-                  onChange={InputEvent}
+                  checked={FullName.checkedA}
+                  onChange={CheckedInputEvent}
                   name="checkedA"
                   color="primary"
                 />
@@ -166,8 +196,8 @@ const Checkout = () => {
             <FormControlLabel
               control={
                 <Checkbox
-                  // checked={FullName.checkedC}
-                  onChange={InputEvent}
+                  checked={FullName.checkedB}
+                  onChange={CheckedInputEvent}
                   name="checkedB"
                   color="primary"
                 />
@@ -175,12 +205,17 @@ const Checkout = () => {
               label="JazzCash"
             />
             <div className="button" >
-              <Button id='materialbtn4' variant="contained" type="submit" className={classes.btn}>
+              <Link to= '/services'> <Button id='materialbtn4' variant="contained" type="submit" className={classes.btn}>
                 PLACE ORDER
-            </Button>
+              </Button>
+              </Link>
             </div>
+        
           </div>
-
+          <Link
+          to = '/services'>
+            Services
+          </Link>
         </div>
       </form>
     </>
