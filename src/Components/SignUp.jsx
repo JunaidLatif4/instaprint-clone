@@ -263,22 +263,22 @@ const SignUp = () => {
   return (
     <>
       <div className="signup_container">
-      <div className="login_btn_container">
-                    <NavLink to="/login" style={{ textDecoration: "none" }}>
-                        <Button
-                            id="logbtn"
-                            variant="contained"
-                            endIcon={<SharpIcon />}
-                            className={classes.btn}
-                        >
-                            Already Have an Account <span className={classes.logbtn}> LOG IN</span>
-                        </Button>
-                    </NavLink>
-                </div>
+        <div className="login_btn_container">
+          <NavLink to="/login" style={{ textDecoration: "none" }}>
+            <Button
+              id="logbtn"
+              variant="contained"
+              endIcon={<SharpIcon />}
+              className={classes.btn}
+            >
+              Already Have an Account <span className={classes.logbtn}> LOG IN</span>
+            </Button>
+          </NavLink>
+        </div>
         <div className="signup_box">
           <Typography variant="h5" style={{ textAlign: "center" }}>
             SIGN-UP
-        </Typography>
+          </Typography>
 
           <form className="form" onSubmit={submit} autoComplete="off">
             <TextField
@@ -389,7 +389,7 @@ const SignUp = () => {
                   className={classes.disbtn}
                 >
                   SIGN UP
-                  </Button>
+                </Button>
             }
           </form>
         </div>

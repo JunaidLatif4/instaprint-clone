@@ -142,95 +142,92 @@ const Login = () => {
   }
 
 
-  const userLogin = async ()=>{
+  const userLogin = async () => {
     axois({
-      url : "http://127.0.0.1:8000/api/login/",
-      method : "post",
-      headers : RegisterHeader ,
-      data : {
-        "username" : enteredData.email ,
-        "password" : enteredData.password
+      url: "http://127.0.0.1:8000/api/login/",
+      method: "post",
+      headers: RegisterHeader,
+      data: {
+        "username": enteredData.email,
+        "password": enteredData.password
       }
-    }).then((res)=>{
+    }).then((res) => {
       // console.log("User LOGED IN ==============" , res.data['token'])
       window.localStorage.setItem("token", res.data["token"])
       window.location.href = "/"
-    }).catch((err)=>{
-      console.log("LOGIN ERROR ===========" , err)
+    }).catch((err) => {
+      console.log("LOGIN ERROR ===========", err)
     })
   }
 
   return (
     <>
       <div className="login_container">
-        <div className="login_c">
-          <div className="login_box">
+        <div className="login_box">
 
-            <Typography variant="h5" style={{ textAlign: "center" }}>
-              LOG-IN
-            </Typography>
+          <Typography variant="h5" style={{ textAlign: "center" }}>
+            LOG-IN
+          </Typography>
 
-            <form className="login_form" onSubmit={submit}>
-              <TextField
-                label="Emial"
-                name="email"
-                value={enteredData.email}
-                variant="outlined"
+          <form className="login_form" onSubmit={submit}>
+            <TextField
+              label="Emial"
+              name="email"
+              value={enteredData.email}
+              variant="outlined"
+              onChange={enteringData}
+              style={{ margin: ".5rem 0", width: "100%" }}
+            />
+
+            <Typography className={classes.error}> {error.emailError} </Typography>
+
+            <FormControl variant="outlined" style={{ margin: ".5rem 0", width: "100%" }}>
+              <InputLabel>Password</InputLabel>
+              <OutlinedInput
+                name="password"
+                type={showPV.showP ? "text" : "password"}
                 onChange={enteringData}
-                style={{ margin: ".5rem 0", width: "100%" }}
+                value={enteredData.password}
+                labelWidth={70}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton edge="end" onClick={clickShowP}>
+                      {showPV.showP ? <Show /> : <Hide />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+
               />
+            </FormControl>
 
-              <Typography className={classes.error}> {error.emailError} </Typography>
+            <Typography className={classes.error}> {error.passwordError} </Typography>
 
-              <FormControl variant="outlined" style={{ margin: ".5rem 0", width: "100%" }}>
-                <InputLabel>Password</InputLabel>
-                <OutlinedInput
-                  name="password"
-                  type={showPV.showP ? "text" : "password"}
-                  onChange={enteringData}
-                  value={enteredData.password}
-                  labelWidth={70}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton edge="end" onClick={clickShowP}>
-                        {showPV.showP ? <Show /> : <Hide />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-
-                />
-              </FormControl>
-
-              <Typography className={classes.error}> {error.passwordError} </Typography>
-
-              {
-                enteredData.email &&
-                  enteredData.password &&
-                  !error.emailError &&
-                  !error.passwordError
-                  ?
-                  <Button
-                    variant="contained"
-                    type="submit"
-                    onClick={userLogin}
-                    endIcon={<SharpIcon />}
-                    className={classes.btn}
-                  >
-                    LOG IN
+            {
+              enteredData.email &&
+                enteredData.password &&
+                !error.emailError &&
+                !error.passwordError
+                ?
+                <Button
+                  variant="contained"
+                  type="submit"
+                  onClick={userLogin}
+                  endIcon={<SharpIcon />}
+                  className={classes.btn}
+                >
+                  LOG IN
                 </Button>
-                  :
-                  <Button
-                    variant="contained"
-                    disabled
-                    endIcon={<BlockIcon />}
-                    className={classes.disbtn}
-                  >
-                    LOG IN
+                :
+                <Button
+                  variant="contained"
+                  disabled
+                  endIcon={<BlockIcon />}
+                  className={classes.disbtn}
+                >
+                  LOG IN
                 </Button>
-              }
-            </form>
-
-          </div>
+            }
+          </form>
         </div>
 
         <div className="signup_btn_container">
@@ -239,6 +236,7 @@ const Login = () => {
               variant="contained"
               endIcon={<SharpIcon />}
               className={classes.btn}
+              id="signbtn"
             >
               Creat an Account <span className={classes.signbtn}> SIGN UP</span>
             </Button>

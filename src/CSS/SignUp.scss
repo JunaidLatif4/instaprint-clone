@@ -30,22 +30,28 @@
         @media only screen and (max-width: 1400px) {
             padding: 1rem;
         }
+        @media only screen and (max-width: 400px) {
+            border: none;
+        }
 
         .form{
-        position: relative;
-        width: 28.125rem;
-        height: auto;
-        padding: 1rem 2rem;
+            position: relative;
+            width: 28.125rem;
+            height: auto;
+            padding: 1rem 2rem;
 
-        @media only screen and (max-width: 1400px) {
-            width: 25rem;
-            padding: .5rem 1rem;
+            @media only screen and (max-width: 1400px) {
+                width: 25rem;
+                padding: .5rem 1rem;
+            }
+            @media only screen and (max-width: 850px) {
+                width: 22rem;
+            }
+            @media only screen and (max-width: 400px) {
+                width: 100%;
+                padding: 0;
+            }
         }
-        @media only screen and (max-width: 850px) {
-            width: 22rem;
-            padding: .5rem 1rem;
-        }
-    }
 
     }
 

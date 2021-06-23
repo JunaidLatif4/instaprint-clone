@@ -1,26 +1,57 @@
 .login_container{
     display: flex;
-    height: 90vh;
     width: 100%;
     justify-content: center;
     align-items: center;
-    .login_c{
+    margin: 5rem 0;
+
+    @media only screen and (max-width: 700px) {
+        flex-direction: column;
+    }
+
+    .login_box{
         padding: 2rem;
         border: 2px solid #999;
+    
+        @media only screen and (max-width: 850px) {
+            padding: 1rem;
+        }
+        @media only screen and (max-width: 500px) {
+            border: none;
+            padding: 0;
+        }
+    
+        .login_form{
+            position: relative;
+            width: 28.125rem;
+            height: auto;
+            padding: 1rem 2rem;
+            @media only screen and (max-width: 1400px) {
+                width: 25rem;
+                padding: .5rem 1rem;
+            }
+            @media only screen and (max-width: 850px) {
+                width: 22rem;
+            }
+            @media only screen and (max-width: 400px) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    }
+    .signup_btn_container{
+        margin-left: 5%;
+    
+        @media only screen and (max-width: 850px) {
+            margin-left: 2%;
+        }
+    
+        #signbtn{
+            @media only screen and (max-width: 850px) {
+                font-size: 10px;
+            }
+        }
     }
 }
 
-.login_box{
-    display: grid;
-    justify-content: center;
-    position: relative;
-}
-.login_form{
-    position: relative;
-    width: 28.125rem;
-    height: auto;
-    padding: 1rem 2rem;
-}
-.signup_btn_container{
-    margin-left: 7%;
-}
+
