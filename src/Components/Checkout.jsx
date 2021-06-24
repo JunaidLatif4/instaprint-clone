@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
 
 
-import "./Checkout.scss";
+import "../CSS/Checkout.scss";
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -213,7 +213,7 @@ const Checkout = () => {
         
           </div>
           <Link
-          to = '/services'>
+          to = '/cfmcheckout'>
             Services
           </Link>
         </div>
