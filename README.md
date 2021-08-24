@@ -14,19 +14,19 @@ Following Environments Must be Installed on your system :
 
 ## FrontEnd Development WorkFlow :
 ### Install Node Modules
-#### \<instaprint-clone>` npm i `
+#### \<instaprint-clone> `npm i`
 ### Start FrontEnd
-#### \<instaprint-clone>` npm start `
+#### \<instaprint-clone> `npm start`
 
 ## BackEnd Development WorkFlow :
 ### Setup Environment
-#### \<instaprint-clone>` python -m venv env `
+#### \<instaprint-clone> `python -m venv env`
 ### Active Environment
-#### \<instaprint-clone>` .env\Scripts\activate `
+#### \<instaprint-clone> `.env\Scripts\activate`
 ### Install Python Modules
-#### \<nstaprint-clone>` pip install -r requirements.txt `
+#### \<nstaprint-clone> `pip install -r requirements.txt`
 ### StartBackEnd
-#### \<instaprint-clone>` python manage.py runserver `
+#### \<instaprint-clone> `python manage.py runserver`
 
 # Project By :
 ## Project Leader
